@@ -1,0 +1,134 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.navmenu__btn {
+  border: 0px;
+  background: none;
+  cursor: pointer;
+}
+
+.navmenu__btn__svg {
+  height: 30px;
+  width: auto;
+}
+
+.navbrand {
+  display: flex;
+  align-items: center;
+}
+
+.navbrand__svg {
+  width: 35px;
+  height: 35px;
+}
+
+.navbrand__title {
+  margin-left: 1rem;
+  font-family: apercuBold;
+  font-size: 2rem;
+  letter-spacing: -1px;
+}
+
+@font-face {
+  font-family: "apercuBold";
+  src: url("./vendors/fonts/apercu/apercuBold.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "apercuBoldItalic";
+  src: url("./vendors/fonts/apercu/apercuBoldItalic.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "apercuItalic";
+  src: url("./vendors/fonts/apercu/apercuItalic.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "apercuLight";
+  src: url("./vendors/fonts/apercu/apercuLight.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "apercuLightItalic";
+  src: url("./vendors/fonts/apercu/apercuLightItalic.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "apercuMedium";
+  src: url("./vendors/fonts/apercu/apercuMedium.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "apercuMediumItalic";
+  src: url("./vendors/fonts/apercu/apercuMediumItalic.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "apercuMono";
+  src: url("./vendors/fonts/apercu/apercuMono.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "apercuRegular";
+  src: url("./vendors/fonts/apercu/apercuRegular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*# sourceMappingURL=main.module.css.map */

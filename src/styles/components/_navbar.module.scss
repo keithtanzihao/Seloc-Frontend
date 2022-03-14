@@ -1,0 +1,29 @@
+.navmenu__btn {
+  border: 0px;
+  background: none;
+  cursor: pointer;
+}
+
+.navmenu__btn__svg {
+  height: 30px;
+  width: auto;
+}
+
+.navbrand {
+  display: flex;
+  align-items: center;
+}
+
+.navbrand__svg {
+  width: 35px;
+  height: 35px;
+}
+
+.navbrand__title {
+  margin-left: 1rem;
+  font-family: apercuBold;
+  font-size: 2rem;
+  letter-spacing: -1px;
+}
+
+

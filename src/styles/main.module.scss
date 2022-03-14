@@ -1,0 +1,74 @@
+@import 'abstracts';
+@import 'base';
+@import 'components';
+@import 'layout';
+@import 'pages';
+@import 'themes';
+// @import 'vendors/fonts';
+
+
+// Gotta refactor this later. 
+// Cant seem to make it work in fonts/_index.scss
+@font-face {
+  font-family: 'apercuBold';
+  src: url('./vendors/fonts/apercu/apercuBold.ttf') ;
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'apercuBoldItalic';
+  src: url('./vendors/fonts/apercu/apercuBoldItalic.ttf') ;
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'apercuItalic';
+  src: url('./vendors/fonts/apercu/apercuItalic.ttf') ;
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'apercuLight';
+  src: url('./vendors/fonts/apercu/apercuLight.ttf') ;
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'apercuLightItalic';
+  src: url('./vendors/fonts/apercu/apercuLightItalic.ttf') ;
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'apercuMedium';
+  src: url('./vendors/fonts/apercu/apercuMedium.ttf') ;
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'apercuMediumItalic';
+  src: url('./vendors/fonts/apercu/apercuMediumItalic.ttf') ;
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'apercuMono';
+  src: url('./vendors/fonts/apercu/apercuMono.ttf') ;
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'apercuRegular';
+  src: url('./vendors/fonts/apercu/apercuRegular.ttf') ;
+  font-weight: normal;
+  font-style: normal;
+}
+
