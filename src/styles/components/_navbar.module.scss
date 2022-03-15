@@ -1,17 +1,48 @@
+header {
+  box-shadow: 0 2px 4px 0 rgb(0 0 0 / 40%);
+}
+
+.navbar {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+  width: calc(100vw - 6rem);
+  height: 5vh;
+}
+
+// NavbarMenu css
 .navmenu__btn {
+  position: relative;
+  z-index: 10;
   border: 0px;
   background: none;
   cursor: pointer;
 }
 
 .navmenu__btn__svg {
-  height: 30px;
+  padding-top: 0.5rem;
+  height: 25px;
   width: auto;
+}
+
+// NavbarBrand css
+.navbar__navbrandCtn {
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: calc(100vw - 6rem);
+  height: 10vh;
 }
 
 .navbrand {
   display: flex;
   align-items: center;
+  
 }
 
 .navbrand__svg {
@@ -20,10 +51,8 @@
 }
 
 .navbrand__title {
-  margin-left: 1rem;
-  font-family: apercuBold;
-  font-size: 2rem;
-  letter-spacing: -1px;
+  margin-left: 0.3rem;
+  font-family: apercuRegular;
+  font-size: 1.5rem;
+  letter-spacing: -2px;
 }
-
-
