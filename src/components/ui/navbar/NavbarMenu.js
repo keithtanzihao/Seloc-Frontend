@@ -4,7 +4,7 @@ import { motion, useAnimation } from "framer-motion";
 import styles from "../../../styles/main.module.css";
 
 // Functional Component for framer motion.
-export default function NavbarMenu() {
+export default function NavbarMenu(props) {
 
   const topVariant = {
     closed: { d: "M7.5 7.5L85.5 7.5" },
@@ -28,6 +28,7 @@ export default function NavbarMenu() {
 
   const checkIsClicked = async () => {
     setMenuOpen(!isMenuOpen);
+    props.setIsMenuOpen();
     if (!isMenuOpen) {
       pathTopCtrl.start(topVariant.open);
       pathMidCtrl.start(midVariant.open);
@@ -41,7 +42,7 @@ export default function NavbarMenu() {
 
   const pathOptions = {
     stroke: "#000000",
-    strokeWidth: "12",
+    strokeWidth: "8",
     strokeLinecap: "round"
   }
 
