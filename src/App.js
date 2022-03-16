@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Header from './components/layout/Header';
+import Menu from './components/ui/menu/Menu';
+
+import './styles/main.module.scss';
+
+export default class App extends React.Component {
+
+  state = {
+    isMenuOpen: false,
+  }
+
+  setIsMenuOpen = () => {
+    this.setState({
+      isMenuOpen: !this.state.isMenuOpen
+    })
+  }
+
+  renderContent = () => {
+    if (this.state.isMenuOpen) {
+      return <Menu />
+    } else {
+      // return <Menu />
+    }
+  }
+
+  render() {
+    return (
+      <React.Fragment>
+        {/* Need to substitude this for react context */}
+        <Header setIsMenuOpen={this.setIsMenuOpen}/>
+        {this.renderContent()}
+      </React.Fragment>
+    )
+  }
 }
 
-export default App;
