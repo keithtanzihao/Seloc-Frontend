@@ -4,6 +4,7 @@ import { Route } from "react-router-dom";
 import Navbar from "./components/ui/navbar/Navbar";
 import Menu from "./components/ui/menu/Menu";
 import Frontpage from "./components/layout/Frontpage";
+import Login from "./components/layout/LoginSignup";
 
 import "./styles/main.module.scss";
 
@@ -18,11 +19,11 @@ export default class App extends React.Component {
     });
   };
 
-  renderContent = () => {
+  renderContent = (page) => {
     if (this.state.isMenuOpen) {
       return <Menu />;
     } else {
-      return <Frontpage />;
+      return page;
     }
   };
 
@@ -32,14 +33,8 @@ export default class App extends React.Component {
         {/* Common components here */}
         <Navbar setIsMenuOpen={this.setIsMenuOpen} />
 
-        <Route path="/main">
-          {/* Need to substitude this for react context */}
-          {this.renderContent()}
-        </Route>
-
-        <Route path="/login">
-          <h1>LOGIN PAGE</h1>
-        </Route>
+        <Route path="/main">{this.renderContent(<Frontpage />)}</Route>
+        <Route path="/login">{this.renderContent(<Login />)}</Route>
         
       </React.Fragment>
     );
