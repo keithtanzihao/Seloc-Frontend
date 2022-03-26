@@ -1,0 +1,35 @@
+@import "../abstracts/variables.module";
+
+.frontpg {
+  position: relative;
+}
+
+.frontpg__signup,
+.frontpg__reason {
+  @include frontpg__ctn;
+}
+
+.frontpg__heroImgCtn {
+  margin: 0 0 1rem 0;
+}
+
+.frontpg__header {
+  width: 70vw;
+  text-align: center;
+  font-family: apercuBold;
+  font-size: 2rem;
+}
+
+.frontpg__btn {
+  @include button__base;
+  margin: 1rem 0rem;
+  padding: 1rem;
+  width: 80%;
+  border-radius: 48px;
+  background-color: #0850fe;
+  color: #ffffff;
+}
+
+.frontpg__btn:hover {
+  background-color: #0146b9;
+}
