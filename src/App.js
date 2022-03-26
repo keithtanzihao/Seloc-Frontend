@@ -4,9 +4,12 @@ import { Route } from "react-router-dom";
 import Navbar from "./components/ui/navbar/Navbar";
 import Menu from "./components/ui/menu/Menu";
 import Frontpage from "./components/layout/Frontpage";
-import Login from "./components/layout/LoginSignup";
+import Signup from "./components/layout/Signup";
+import Techniques from "./components/layout/Techniques";
 
 import "./styles/main.module.scss";
+
+
 
 export default class App extends React.Component {
   state = {
@@ -34,8 +37,10 @@ export default class App extends React.Component {
         <Navbar setIsMenuOpen={this.setIsMenuOpen} />
 
         <Route path="/main">{this.renderContent(<Frontpage />)}</Route>
-        <Route path="/login">{this.renderContent(<Login />)}</Route>
-        
+        <Route path="/login">{this.renderContent(<Signup authType="login" />)}</Route>
+        <Route path="/signup">{this.renderContent(<Signup authType="signup" />)}</Route>
+        <Route path="/articles">{this.renderContent(<Techniques />)}</Route>
+
       </React.Fragment>
     );
   }
