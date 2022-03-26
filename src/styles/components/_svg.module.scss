@@ -1,0 +1,19 @@
+.arrow__svg {
+  height: 30px;
+  width: auto;
+}
+
+.hero__svg {
+  width: 80vw;
+  height: auto;
+}
+
+.login__svg {
+  position: absolute;
+  z-index: -1;
+  top: 0rem;
+  height: calc(100vh - 5vh - 2rem);
+  width: 100vw;
+  // Hack cos image is out of alignment
+  background-color: #FAF6F4;
+}
