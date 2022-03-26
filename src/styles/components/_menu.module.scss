@@ -1,0 +1,25 @@
+.menu {
+  padding: 2rem 1rem;
+}
+
+.menu > div:first-child {
+  margin-bottom: 3rem;
+}
+
+.menu__header {
+  margin-bottom: 1rem;
+  font-family: apercuRegular;
+  font-size: 1rem;
+}
+
+.menu__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 7vh;
+}
+
+.menu__item__title {
+  font-family: apercuBold;
+  font-size: 2.2rem;
+}
