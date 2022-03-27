@@ -1,0 +1,67 @@
+.techniqueModal {
+  @include frontpg__ctn;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  width: calc(100vw - 2rem);
+
+  // 4rem from padding 74.59px from navbar
+  height: calc(100vh - 74.59px - 4rem);
+  background-color: grey;
+}
+
+.techniqueModal__ctn {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0.5rem;
+  height: 50vh;
+  background-color: white;
+}
+
+.techniqueModal__header,
+.techniqueModal__filter--broad,
+.techniqueModal__filter--tag,
+.techniqueModal__footer {
+  margin: 0.5rem 0rem;
+}
+
+
+.techniqueModal__header {
+  display: flex;
+  justify-content: space-between;
+  font-family: apercuRegular;
+  font-size: 1rem;
+}
+
+.techniqueModal__filter--broad {
+  display: flex;
+  align-items: center;
+}
+
+.techniqueModal__filterMsg {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+.techniqueModal__filterMsg > span:nth-child(1) {
+  font-family: apercuBold;
+  font-size: 1.2rem;
+}
+
+.techniqueModal__filterMsg > span:nth-last-child(1) {
+  font-family: apercuRegular;
+  font-size: 1rem;
+}
+
+.techniqueModal__filterCheck {
+  flex-grow: 1;
+}
+
+.techniqueModal__filter--tags {
+  flex-grow: 1;
+}
+
+.techniqueModal__footer {
+  align-self: flex-end;
+}
