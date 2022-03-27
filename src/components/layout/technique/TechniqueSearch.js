@@ -2,7 +2,7 @@ import React from "react";
 
 import styles from "../../../styles/main.module.scss";
 
-export default class ArticlesSearch extends React.Component {
+export default class TechniqueSearch extends React.Component {
   
   render() {
     return (
