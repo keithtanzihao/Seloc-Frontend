@@ -1,7 +1,9 @@
 import React from "react";
 import axios from "axios";
 
+import TechniqueModal from "../ui/modal/TechniqueModal";
 import TechniqueSearch from "./technique/TechniqueSearch";
+import Button from "../ui/button/Button";
 
 import styles from "../../styles/main.module.scss";
 
@@ -14,7 +16,7 @@ export default class Techniques extends React.Component {
   state = {
     searchField: "",
     searchResponse: [],
-    data: []
+    isFilterOpen: false
   };
 
   componentDidMount = async () => {
@@ -49,11 +51,9 @@ export default class Techniques extends React.Component {
       searchTimer = setTimeout(async () => {
         if (this.state.searchField !== "") {
           let response = await axios.post(this.BASE_API_URL + "techniques/search", {
-            title: this.state.searchField,
-            category: this.state.searchField,
-            benefits: this.state.searchField,
-            instructions: this.state.searchField,
-            painpoints: this.state.searchField,
+            searchQuery: this.state.searchField,
+            // category: this.state.searchField,
+            // painPoints: this.state.searchField,
           });
           this.renderTechniques(response.data);
 
@@ -66,18 +66,39 @@ export default class Techniques extends React.Component {
     });
   };
 
+  isFilterOpenUpdate = (event) => {
+    this.setState({
+      isFilterOpen: !this.state.isFilterOpen
+    })
+  };
+
+  renderContent = () => {
+    if (this.state.isFilterOpen) {
+      return <TechniqueModal />
+    }
+  }
+
+
   render() {
     return (
       <main className={`${styles["technique"]}`}>
-        <h1>Articles</h1>
-        <TechniqueSearch
+
+        <TechniqueModal />
+        {/* {this.renderContent()} */}
+
+        {/* <h1>Articles</h1> */}
+        {/* <TechniqueSearch
           searchField={this.state.searchField}
           searchFieldUpdate={this.searchFieldUpdate}
-        />
+        /> */}
 
-        {/* Dam im good */}
-        {this.state.searchResponse}
-        
+        {/* <Button
+          class={`${styles["technique__btn"]}`}
+          content="Filter Options"
+          clickEvent={this.isFilterOpenUpdate}
+        /> */}
+        {/* {this.state.searchResponse} */}
+
       </main>
     );
   }
