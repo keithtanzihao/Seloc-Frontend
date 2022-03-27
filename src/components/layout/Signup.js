@@ -26,7 +26,9 @@ export default class Signup extends React.Component {
     },
   };
 
-  // Consider changing to joi, yup later
+  /**
+   * Definitely need to use joi or refactor this later, its too long
+   *  */
   credentialsIsEmpty = (value) => value.trim() === "";
   credentialsIsShort = (value) => value.trim().length < 8;
   credentialsRegex = (value) => {
