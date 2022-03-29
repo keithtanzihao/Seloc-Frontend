@@ -17,6 +17,8 @@ export default class Techniques extends React.Component {
     searchField: "",
     searchResponse: [],
     isFilterOpen: false
+
+    
   };
 
   componentDidMount = async () => {
@@ -74,7 +76,7 @@ export default class Techniques extends React.Component {
 
   renderContent = () => {
     if (this.state.isFilterOpen) {
-      return <TechniqueModal />
+      // return <TechniqueModal />
     }
   }
 
@@ -86,18 +88,22 @@ export default class Techniques extends React.Component {
         <TechniqueModal />
         {/* {this.renderContent()} */}
 
+        {/* <Button
+          class={`${styles["technique__btn"]}`}
+          content="Filter Options"
+          clickEvent={this.isFilterOpenUpdate}
+        /> */}
+
         {/* <h1>Articles</h1> */}
         {/* <TechniqueSearch
           searchField={this.state.searchField}
           searchFieldUpdate={this.searchFieldUpdate}
         /> */}
 
-        {/* <Button
-          class={`${styles["technique__btn"]}`}
-          content="Filter Options"
-          clickEvent={this.isFilterOpenUpdate}
-        /> */}
         {/* {this.state.searchResponse} */}
+
+        
+        
 
       </main>
     );
