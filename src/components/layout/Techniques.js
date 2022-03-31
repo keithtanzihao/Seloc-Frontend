@@ -3,6 +3,7 @@ import axios from "axios";
 
 import TechniqueModal from "../ui/modal/TechniqueModal";
 import TechniqueSearch from "./technique/TechniqueSearch";
+import TechniqueCards from "./technique/TechniqueCards";
 import Button from "../ui/button/Button";
 
 import styles from "../../styles/main.module.scss";
@@ -16,9 +17,16 @@ export default class Techniques extends React.Component {
   state = {
     searchField: "",
     searchResponse: [],
-    isFilterOpen: false
+    isFilterOpen: false,
 
-    
+    isCategoryBroadMatch: false,
+    isPainpointBroadMatch: false,
+
+    categoryFields: [],
+    selectedCategory: [],
+
+    painpointsFields: [],
+    selectedPainPoints: [],
   };
 
   componentDidMount = async () => {
@@ -30,15 +38,16 @@ export default class Techniques extends React.Component {
     this.setState({
       searchResponse: resData.map(function (techniqueInfo) {
         return (
-          <React.Fragment key={techniqueInfo._id}>
-            <div className={`${styles["technique__test"]}`}>
-              <h1>{techniqueInfo.title}</h1>
-              <p>{techniqueInfo.category}</p>
-              <p>{techniqueInfo.benefits}</p>
-              <p>{techniqueInfo.instructions}</p>
-              <p>{techniqueInfo.painpoints}</p>
-            </div>
-          </React.Fragment>
+          // <React.Fragment key={techniqueInfo._id}>
+          //   <div className={`${styles["technique__test"]}`}>
+          //     <h1>{techniqueInfo.title}</h1>
+          //     <p>{techniqueInfo.category}</p>
+          //     <p>{techniqueInfo.benefits}</p>
+          //     <p>{techniqueInfo.instructions}</p>
+          //     <p>{techniqueInfo.painpoints}</p>
+          //   </div>
+          // </React.Fragment>
+          <TechniqueCards title={techniqueInfo.title} />
         )
       })
     })
@@ -74,38 +83,42 @@ export default class Techniques extends React.Component {
     })
   };
 
+
+
+
+
+  renderModal = () => {
+    return (this.state.isFilterOpen) ? <TechniqueModal onClick={this.isFilterOpenUpdate} /> : "";
+  }
+
   renderContent = () => {
     if (this.state.isFilterOpen) {
       // return <TechniqueModal />
     }
   }
 
-
   render() {
     return (
       <main className={`${styles["technique"]}`}>
 
-        <TechniqueModal />
-        {/* {this.renderContent()} */}
+        {this.renderModal()}
 
-        {/* <Button
+        <h1>Articles</h1>
+        <TechniqueSearch
+          searchField={this.state.searchField}
+          searchFieldUpdate={this.searchFieldUpdate}
+        />
+
+        <Button
           class={`${styles["technique__btn"]}`}
           content="Filter Options"
           clickEvent={this.isFilterOpenUpdate}
-        /> */}
+        />
 
-        {/* <h1>Articles</h1> */}
-        {/* <TechniqueSearch
-          searchField={this.state.searchField}
-          searchFieldUpdate={this.searchFieldUpdate}
-        /> */}
-
-        {/* {this.state.searchResponse} */}
-
-        
-        
+        {this.state.searchResponse}
 
       </main>
     );
   }
+
 }
