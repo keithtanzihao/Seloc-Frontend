@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import { motion, useAnimation } from "framer-motion";
 
 import styles from "../../../styles/main.module.css";
