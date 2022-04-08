@@ -1,9 +1,12 @@
-import React from "react";
+import React, { Fragment } from "react";
 import axios from "axios";
+import { NavLink } from "react-router-dom";
 
 import TechniqueModal from "../ui/modal/TechniqueModal";
 import TechniqueSearch from "./technique/TechniqueSearch";
 import TechniqueCards from "./technique/TechniqueCards";
+import TechniqueDisplay from "../ui/modal/TechniqueDisplay";
+
 import Button from "../ui/button/Button";
 
 import styles from "../../styles/main.module.scss";
@@ -14,22 +17,32 @@ export default class Techniques extends React.Component {
   BASE_API_URL = "http://localhost:3001/";
 
   state = {
-    searchField: "",
+    // Store cards
+    renderedCards: [],
+
+    // Need to change searchResponse to no longer be dynamic 
     searchResponse: [],
     isFilterOpen: false,
 
-    isCategoryBroadMatch: false,
-    isPainpointBroadMatch: false,
+    // Need to covert isDisplayOpen to a link instead of a modal
+    isDisplayOpen: false,
 
-    categoryFields: [],
-    selectedCategory: [],
 
-    painpointsFields: [],
-    selectedPainPoints: [],
+    // Current TechniqueCard
+    selectedInfo: {},
+
+    // TechniqueModal filter options
+    searchField: "",
+    filterOptions: {},
+
+    // sesssionUser
+    sessionUser: ""
   };
 
   componentDidMount = async () => {
     let response = await axios.get(this.BASE_API_URL + "techniques");
+
+    // Need to remove these and replace it with something more static
     let categoryResp = await axios.get(
       this.BASE_API_URL + "techniques/category"
     );
@@ -38,170 +51,97 @@ export default class Techniques extends React.Component {
     );
 
     this.setState({
+      // Rename response, its like crap
+      searchResponse: response.data.techniqueArrays,
+      sessionUser: response.data.sessionUser,
+
       categoryFields: categoryResp.data,
       painpointsFields: painpointResp.data,
     });
-
-    this.renderTechniques(response.data);
   };
 
-  renderTechniques = async (resData) => {
+  // TechniqueSearch functions
+  updateStateObjects = (stateName, stateObj) => {
     this.setState({
-      searchResponse: resData.map(function (techniqueInfo) {
-        return (
-          // <React.Fragment key={techniqueInfo._id}>
-          //   <div className={`${styles["technique__test"]}`}>
-          //     <h1>{techniqueInfo.title}</h1>
-          //     <p>{techniqueInfo.category}</p>
-          //     <p>{techniqueInfo.benefits}</p>
-          //     <p>{techniqueInfo.instructions}</p>
-          //     <p>{techniqueInfo.painpoints}</p>
-          //   </div>
-          // </React.Fragment>
-          <TechniqueCards title={techniqueInfo.title} />
-        );
-      }),
-    });
-  };
+      [stateName]: stateObj
+    })
+  }
 
-  searchFieldUpdate = (event) => {
-    this.setState(
-      {
-        [event.target.name]: event.target.value,
-      },
-      () => {
-        // Might be bad Practise BUT YOU GONNA CRY
-        clearTimeout(searchTimer);
-        searchTimer = setTimeout(async () => {
-          if (this.state.searchField !== "") {
-            let response = await axios.post(
-              this.BASE_API_URL + "techniques/search",
-              {
-                searchQuery: this.state.searchField,
-                // category: this.state.searchField,
-                // painPoints: this.state.searchField,
-              }
-            );
-            this.renderTechniques(response.data);
-          } else {
-            // Resets data if there is nothing in search bar
-            let response = await axios.get(this.BASE_API_URL + "techniques");
-            this.renderTechniques(response.data);
-          }
-        }, 500);
-      }
-    );
-  };
-
-  updateSelectedCategory = (event) => {
-    if (this.state.selectedCategory.includes(event.target.value)) {
-      let indexToRemove = this.state.selectedCategory.findIndex(function (
-        category
-      ) {
-        return category === event.target.value;
-      });
-
-      this.setState({
-        selectedCategory: [
-          ...this.state.selectedCategory.slice(0, indexToRemove),
-          ...this.state.selectedCategory.slice(indexToRemove + 1),
-        ],
-      });
-    } else {
-      this.setState({
-        selectedCategory: [...this.state.selectedCategory, event.target.value],
-      });
-    }
-  };
-
-  updateSelectedPainPoints = (event) => {
-    if (this.state.selectedPainPoints.includes(event.target.value)) {
-      let indexToRemove = this.state.selectedPainPoints.findIndex(function (
-        category
-      ) {
-        return category === event.target.value;
-      });
-
-      this.setState({
-        selectedPainPoints: [
-          ...this.state.selectedPainPoints.slice(0, indexToRemove),
-          ...this.state.selectedPainPoints.slice(indexToRemove + 1),
-        ],
-      });
-    } else {
-      this.setState({
-        selectedPainPoints: [...this.state.selectedPainPoints, event.target.value],
-      });
-    }
-  };
-
-  updateIsBroadMatch = (event, isBroadMatch) => {
-    this.setState({
-      [event.target.name]: !this.state[isBroadMatch],
-    });
-  };
-
-  resetSelected = (event) => {
-    event.preventDefault();
-    this.setState({
-      isCategoryBroadMatch: false,
-      isPainpointBroadMatch: false,
-      selectedCategory: [],
-      selectedPainPoints: [],
-    });
-  };
-
-
+  // Techniques functions
   isFilterOpenUpdate = (event) => {
     this.setState({
       isFilterOpen: !this.state.isFilterOpen,
     });
   };
 
-  renderModal = () => {
-    return this.state.isFilterOpen ? (
-      <TechniqueModal
-        onClick={this.isFilterOpenUpdate}
+  // Renders TechniqueCards
+  renderCards = () => {
+    const { searchResponse } = this.state;
+    return searchResponse.map((techniqueInfo, index) => {
+      console.log(techniqueInfo);
+      return (
+        <NavLink to={`/technique/${techniqueInfo._id}`}>
+          <TechniqueCards
+            key={`techniqueCard${index}`}
+            techniqueInfo={techniqueInfo}
+            updateStateObjects={this.updateStateObjects}
+          />
+        </NavLink>
+      );
+    })
+  }
 
-        isCategoryBroadMatch={this.state.isCategoryBroadMatch}
-        isPainpointBroadMatch={this.state.isPainpointBroadMatch}
+  // Renders everything based on state
+  renderContent = () => {
+    const { searchField, filterOptions } = this.state;
 
-        updateIsBroadMatch={this.updateIsBroadMatch}
+    if (this.state.isFilterOpen) {
+      return (
+        <TechniqueModal
+          onClick={this.isFilterOpenUpdate}
+          resetSelected={this.resetSelected}
+          updateStateObjects={this.updateStateObjects}
+        />
+      );
+    } else {
+      return (
+        <Fragment>
+          <div className={`${styles["technique__ctn--search"]}`}>
+            <h1>Recommended Wellbeing Techniques</h1>
+            <TechniqueSearch 
+              updateStateObjects={this.updateStateObjects} 
+              searchField={searchField}
+              filterOptions={filterOptions} 
+            />
+          </div>
 
-        categoryFields={this.state.categoryFields}
-        selectedCategory={this.state.selectedCategory}
-        updateSelectedCategory={this.updateSelectedCategory}
+          <div className={`${styles["technique__ctn--btns"]}`}>
+            <Button
+              class={`${styles["technique__btn"]}`}
+              content="Filter Options"
+              clickEvent={this.isFilterOpenUpdate}
+            />
 
-        painpointsFields={this.state.painpointsFields}
-        selectedPainPoints={this.state.selectedPainPoints}
-        updateSelectedPainPoints={this.updateSelectedPainPoints}
+            <NavLink to="/techniques/add-technique">
+              <Button
+                class={`${styles["technique__btn"]}`}
+                content="Add Technique"
+              />
+            </NavLink>
+          </div>
 
-        resetSelected={this.resetSelected}
-      />
-    ) : (
-      ""
-    );
+          <div className={`${styles["technique__ctn--content"]}`}>
+            {this.renderCards()}
+          </div>
+        </Fragment>
+      )
+    }
   };
 
   render() {
     return (
       <main className={`${styles["technique"]}`}>
-        {this.renderModal()}
-
-        <h1>Articles</h1>
-        <TechniqueSearch
-          searchField={this.state.searchField}
-          searchFieldUpdate={this.searchFieldUpdate}
-
-        />
-
-        <Button
-          class={`${styles["technique__btn"]}`}
-          content="Filter Options"
-          clickEvent={this.isFilterOpenUpdate}
-        />
-
-        {this.state.searchResponse}
+        {this.renderContent()}
       </main>
     );
   }
