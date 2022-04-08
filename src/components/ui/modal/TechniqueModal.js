@@ -1,8 +1,8 @@
 import React from "react";
 import axios from "axios";
 
+import Button from "../button/Button";
 import TagButton from "../button/TagButton";
-import TechniqueCategory from "../../layout/technique/TechniqueCategory";
 
 import styles from "../../../styles/main.module.css";
 
@@ -13,81 +13,185 @@ export default class TechniqueModal extends React.Component {
   BASE_API_URL = "http://localhost:3001/";
 
   state = {
-    // tagType: "Category",
-    tagType: "Painpoints",
+    categoryFields: [],
+    painpointsFields: [],
+
+    difficulty: "None",
+    orderBy: "None",
+
+    isBroadMatch: false,
+    selectedCategory: [],
+    selectedPainPoints: [],
   };
 
-  renderCategoryTags = () => {
-    let results = this.props.categoryFields.map(category => {
+  componentDidMount = () => {
+    let categoryResp = ["Exercising", "Meditation", "Diet", "Communication",
+      "Sleeping", "Mental Health", "Indoors", "Outdoors"];
+
+    let painpointResp = ["Anger", "Sleep", "Focus", "Lifestyle", "Relationships",
+      "Happiness", "Anxiety", "Mindfulness", "Stress", "Physical Health", "Mental Health"];
+
+    this.setState({
+      categoryFields: categoryResp,
+      painpointsFields: painpointResp,
+    });
+  };
+
+  renderTags = (tagFields, tagName, tagArray) => {
+    return tagFields.map((tag, index) => {
       return (
-        <React.Fragment key={category}>
+        <React.Fragment key={`tag${index}`}>
           <TagButton
-            category={category}
+            tag={tag}
             className={`${styles["tagBtn__checkbox"]}`}
-            onChange={this.props.updateSelectedCategory}
-            checked={this.props.selectedCategory.includes(category)}
+            updateSelectedTags={(event) => this.updateSelectedTags(event, tagName, tagArray)}
+            checked={tagArray.includes(tag)}
           />
         </React.Fragment>
       );
     });
-    return results;
-  };
-
-  renderPainTags = () => {
-    let results = this.props.painpointsFields.map(painpoints => {
-      return (
-        <React.Fragment key={painpoints}>
-          <TagButton
-            category={painpoints}
-            className={`${styles["tagBtn__checkbox"]}`}
-            onChange={this.props.updateSelectedPainPoints}
-            checked={this.props.selectedPainPoints.includes(painpoints)}
-          />
-        </React.Fragment>
-      );
-    });
-    return results;
   }
 
-  updateTagType = (tagType) => {
+  updateField = (event) => {
     this.setState({
-      tagType: tagType
+      [event.target.name]: event.target.value,
+    });
+  };
+
+  updateIsBroadMatch = () => {
+    this.setState({
+      isBroadMatch: !this.state.isBroadMatch
     })
   }
-  
+
+  // Need to refactor this shit later
+  updateSelectedTags = (event, tagName, tagArray) => {
+    if (tagArray.includes(event.target.value)) {
+      let indexToRemove = tagArray.findIndex(function (tag) {
+        return tag === event.target.value;
+      });
+      this.setState({
+        [tagName]: [
+          ...tagArray.slice(0, indexToRemove),
+          ...tagArray.slice(indexToRemove + 1),
+        ]
+      });
+    } else {
+      this.setState({
+        [tagName]: [...tagArray, event.target.value],
+      });
+    }
+  };
+
+  resetSelected = (event) => {
+    event.preventDefault();
+    this.setState({
+      difficulty: "None",
+      orderBy: "None",
+      isBroadMatch: false,
+      selectedCategory: [],
+      selectedPainPoints: [],
+    });
+  };
+
+  applyFilters = () => {
+    const { difficulty, orderBy, isBroadMatch, selectedCategory, selectedPainPoints } = this.state;
+    this.props.updateStateObjects("filterOptions", {
+      difficulty, orderBy, isBroadMatch,
+      selectedCategory, selectedPainPoints,
+    })
+  }
+
   render() {
+    const {
+      difficulty, orderBy, isBroadMatch,
+      categoryFields, painpointsFields,
+      selectedCategory, selectedPainPoints
+    } = this.state;
+
     return (
       <div className={`${styles["techniqueModal"]}`}>
-        {/* Lousy x placeholder first */}
-        <span onClick={this.props.onClick}>X</span>
-        <section className={`${styles["techniqueModal__ctn"]}`}>
-          <header className={`${styles["techniqueModal__header"]}`}>
-            <div className={`${styles["techniqueModal__header__part"]}`}>
-              <h1 onClick={() => this.updateTagType("Category")}>Category</h1>
-              <h1 onClick={() => this.updateTagType("Painpoints")}>Painpoint</h1>
-            </div>
 
-            <div className={`${styles["techniqueModal__header__part"]}`}>
-              <button onClick={this.props.resetSelected}>Reset</button>
-              <button>Apply</button>
+        <span onClick={this.props.onClick}>&#10005;</span>
+
+        <section className={`${styles["techniqueModal__ctn"]}`}>
+
+          <header className={`${styles["techniqueModal__header"]}`}>
+            <h1>Filter Options</h1>
+            <div>
+              <Button clickEvent={this.resetSelected} content="Reset" />
+              <Button clickEvent={this.applyFilters} content="Apply" />
             </div>
           </header>
 
-          <TechniqueCategory
-            hidden={this.state.tagType == "Category" ? "" : `${styles["techniqueModal__hidden"]}`}
-            name="isCategoryBroadMatch"
-            value={this.props.isCategoryBroadMatch}
-            updateIsBroadMatch={(event) => this.props.updateIsBroadMatch(event, "isCategoryBroadMatch")}
-            renderCategoryTags={this.renderCategoryTags}
-          />
+          <div className={`${styles["techniqueModal__dropdowns"]}`}>
 
-          <TechniqueCategory
-            hidden={this.state.tagType == "Painpoints" ? "" : `${styles["techniqueModal__hidden"]}`}
-            name="isPainpointBroadMatch"
-            value={this.props.isPainpointBroadMatch}
-            updateIsBroadMatch={(event) => this.props.updateIsBroadMatch(event, "isPainpointBroadMatch")}
-            renderCategoryTags={this.renderPainTags}
-          />
+            <div className={`${styles["techniqueModal__dropdownsCtn"]}`}>
+              <label>Duration Order</label>
+              <select name="orderBy" value={orderBy} onChange={this.updateField}>
+                <option>None</option>
+                <option>Ascending</option>
+                <option>Descending</option>
+              </select>
+            </div>
+
+            <div className={`${styles["techniqueModal__dropdownsCtn"]}`}>
+              <label>Difficulty</label>
+              <select name="difficulty" value={difficulty} onChange={this.updateField}>
+                <option>None</option>
+                <option>Easy</option>
+                <option>Medium</option>
+                <option>Hard</option>
+              </select>
+            </div>
+
+          </div>
+
+
+
+          <div className={`${styles["techniqueModal__tagsCtn"]}`}>
+
+            <h1>Filter Tags</h1>
+
+            <div className={`${styles["techniqueModal__matchAll"]}`}>
+              <div>
+                <span>Broad Matches</span>
+                <span>Only match wellness techniques if all criterias are met.</span>
+              </div>
+
+              <div>
+                <input
+                  type="checkbox"
+                  name="isBroadMatch"
+                  value={isBroadMatch}
+                  onChange={this.updateIsBroadMatch}
+                  checked={isBroadMatch}
+                />
+              </div>
+
+            </div>
+
+      
+
+            <div className={`${styles["techniqueModal__tagsSection"]}`}>
+              <span>Find techniques with the following categories</span>
+              <div>{this.renderTags(categoryFields, "selectedCategory", selectedCategory)}</div>
+            </div>
+
+
+
+            <div className={`${styles["techniqueModal__tagsSection"]}`}>
+              <span>Find techniques that solves the following painpoints</span>
+              <div>{this.renderTags(painpointsFields, "selectedPainPoints", selectedPainPoints)}</div>
+            </div>
+
+
+          </div>
+
+
+
+
+
         </section>
       </div>
     );
