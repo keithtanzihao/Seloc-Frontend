@@ -14,15 +14,22 @@ export default class TechniqueSearch extends React.Component {
   };
 
   searchFieldSubmit = async () => {
-    let queryPayload = this.props.searchField;
+    // Scuffed but works i guess
+    let queryPayload = this.props.searchField || " ";
     let filterPayload = JSON.stringify({
       ...this.props.filterOptions,
     });
+
+    console.log(`|_${queryPayload}_|`);
+    console.log("-----------------------------------------------");
+    console.log(filterPayload)
+    console.log("-----------------------------------------------");
 
     let response = await axios.get(
       BASE_API_URL + `techniques/search/${queryPayload}/${filterPayload}`
     );
     console.log(response);
+    this.props.updateStateObjects("searchResponse", response.data);
   };
 
   render() {
