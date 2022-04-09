@@ -42,21 +42,10 @@ export default class Techniques extends React.Component {
   componentDidMount = async () => {
     let response = await axios.get(this.BASE_API_URL + "techniques");
 
-    // Need to remove these and replace it with something more static
-    let categoryResp = await axios.get(
-      this.BASE_API_URL + "techniques/category"
-    );
-    let painpointResp = await axios.get(
-      this.BASE_API_URL + "techniques/painpoints"
-    );
-
     this.setState({
       // Rename response, its like crap
       searchResponse: response.data.techniqueArrays,
       sessionUser: response.data.sessionUser,
-
-      categoryFields: categoryResp.data,
-      painpointsFields: painpointResp.data,
     });
   };
 
@@ -78,7 +67,6 @@ export default class Techniques extends React.Component {
   renderCards = () => {
     const { searchResponse } = this.state;
     return searchResponse.map((techniqueInfo, index) => {
-      console.log(techniqueInfo);
       return (
         <NavLink to={`/technique/${techniqueInfo._id}`}>
           <TechniqueCards
