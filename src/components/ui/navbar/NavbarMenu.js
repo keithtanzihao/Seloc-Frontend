@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { motion, useAnimation } from "framer-motion";
 
@@ -6,6 +6,19 @@ import styles from "../../../styles/main.module.css";
 
 // Functional Component for framer motion.
 export default function NavbarMenu(props) {
+
+  // Similar to componentDidMount in some manner
+  useEffect(() => {
+    if (props.isMenuOpen) {
+      pathTopCtrl.start(topVariant.open);
+      pathMidCtrl.start(midVariant.open);
+      pathBotCtrl.start(botVariant.open);
+    } else {
+      pathTopCtrl.start(topVariant.closed);
+      pathMidCtrl.start(midVariant.closed);
+      pathBotCtrl.start(botVariant.closed);
+    }
+  }, [props.isMenuOpen])
 
   const topVariant = {
     closed: { d: "M7.5 7.5L85.5 7.5" },
@@ -22,23 +35,12 @@ export default function NavbarMenu(props) {
     open: { d: "M8 84.9533L82.9533 10" }
   }
 
-  const [isMenuOpen, setMenuOpen] = React.useState(false);
   const pathTopCtrl = useAnimation();
   const pathMidCtrl = useAnimation();
   const pathBotCtrl = useAnimation();
 
   const checkIsClicked = async () => {
-    setMenuOpen(!isMenuOpen);
     props.setIsMenuOpen();
-    if (!isMenuOpen) {
-      pathTopCtrl.start(topVariant.open);
-      pathMidCtrl.start(midVariant.open);
-      pathBotCtrl.start(botVariant.open);
-    } else {
-      pathTopCtrl.start(topVariant.closed);
-      pathMidCtrl.start(midVariant.closed);
-      pathBotCtrl.start(botVariant.closed);
-    }
   }
 
   const pathOptions = {
