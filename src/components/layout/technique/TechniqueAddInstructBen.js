@@ -37,17 +37,6 @@ export default class TechniqueAddInstructBen extends React.Component {
   };
 
   checkValidate = () => {
-    const { errorMsg } = this.state;
-    let content = errorMsg.content !== "valid" ? `Input cannot be empty` : "valid";
-    let imageUrl = errorMsg.imageUrl !== "valid" ? `Invalid url path` : "valid";
-
-    this.setState({
-      errorMsg: {
-        content,
-        imageUrl,
-      },
-    });
-
     for (let field in this.state.errorMsg) {
       if (this.state.errorMsg[field] !== "valid") {
         return false;
@@ -154,14 +143,22 @@ export default class TechniqueAddInstructBen extends React.Component {
     );
   };
 
+
+
   renderFieldTypeContent = (type) => {
-    return this.props.addInstructBen[type].map(function (field) {
+    return this.props.addInstructBen[type].map((field, index) => {
       return (
         <React.Fragment key={field.content}>
-          <li className={`${styles["techniqueAdd__indivItem"]}`}>
-            <p>{field.content}</p>
-            {field.imageUrl && <img src={field.imageUrl} />}
-          </li>
+          <div>
+            <li className={`${styles["techniqueAdd__indivItem"]}`}>
+              <p>{field.content}</p>
+              {field.imageUrl && <img src={field.imageUrl} />}
+            </li>
+            <div>
+              <span onClick={() => this.props.removeInstructBen(type, index)}>&#10005;</span>
+            </div>
+          </div>
+
         </React.Fragment>
       );
     });
