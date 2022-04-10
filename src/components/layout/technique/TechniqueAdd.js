@@ -31,7 +31,33 @@ class TechniqueAdd extends React.Component {
       category: [],
       painpoints: [],
     },
+    hasLoaded: false
   };
+
+  componentDidMount = async () => {
+
+    if (this.props.location.techniqueInfo) {
+      const {
+        title, description, duration, difficulty, image, 
+        instructions, benefits, category, painpoints,
+      } = this.props.location.techniqueInfo
+
+      this.setState({
+        addInfo: {
+          title, description, image, duration, difficulty
+        },
+        addInstructBen: {
+          instructions, benefits
+        },
+        addTags: {
+          category, painpoints
+        },
+      })
+    }
+    this.setState({
+      hasLoaded: true
+    })
+  }
 
   updateIncreasePageNum = (increment, checkValidate = 0) => {
 
@@ -55,6 +81,19 @@ class TechniqueAdd extends React.Component {
       [obj]: prevObj,
     });
   };
+
+  removeInstructBen = (fieldName, index) => {
+    this.setState({
+      addInstructBen: {
+        ...this.state.addInstructBen,
+        [fieldName]: [
+          ...this.state.addInstructBen[fieldName].slice(0, index), 
+          ...this.state.addInstructBen[fieldName].slice(index + 1) 
+        ],
+        
+      }
+    })
+  }
 
   updateAddNewInstructBen = (prevArray, prevArrayName, addedObj, validateFields, resetFields) => {
     if (validateFields()) {
@@ -96,7 +135,21 @@ class TechniqueAdd extends React.Component {
   };
 
   submitNewTechnique = async (checkTagsNotEmpty) => {
-    if (checkTagsNotEmpty()) {
+    if (this.props.location.techniqueInfo && checkTagsNotEmpty()) {
+      console.log("WE KNOW WE EDITTING POGU");
+      console.log(this.props.location.techniqueInfo);
+      await axios.put(BASE_API_URL + `technique/${this.props.location.techniqueInfo._id}`, {
+        ...this.state.addInfo,
+        ...this.state.addInstructBen,
+        ...this.state.addTags,
+        // Remember to include comments
+        comments: this.props.location.techniqueInfo.comments
+      })
+
+      this.props.history.replace(`/technique/${this.props.location.techniqueInfo._id}`);
+    }
+
+    else if (checkTagsNotEmpty()) {
       await axios.post(BASE_API_URL + "technique/add", {
         ...this.state.addInfo,
         ...this.state.addInstructBen,
@@ -121,6 +174,7 @@ class TechniqueAdd extends React.Component {
         <TechniqueAddInstructBen
           addInstructBen={addInstructBen}
           updateAddNewInstructBen={this.updateAddNewInstructBen}
+          removeInstructBen={this.removeInstructBen}
           updateIncreasePageNum={this.updateIncreasePageNum}
         />
       );
@@ -136,21 +190,25 @@ class TechniqueAdd extends React.Component {
   };
 
   render() {
-    return (
-      <React.Fragment>
-        <section className={`${styles["techniqueAdd"]}`}>
-          {/* Header that doesnt change */}
+    if (this.state.hasLoaded) {
+      return (
+        <React.Fragment>
+          <section className={`${styles["techniqueAdd"]}`}>
+            {/* Header that doesnt change */}
 
 
-          <div className={`${styles["techniqueAdd__header"]}`}>
-            <h1>Add New Technique</h1>
-          </div>
+            <div className={`${styles["techniqueAdd__header"]}`}>
+              <h1>Add New Technique</h1>
+            </div>
 
-          {this.renderContentPage()}
+            {this.renderContentPage()}
 
-        </section>
-      </React.Fragment>
-    );
+          </section>
+        </React.Fragment>
+      );
+    } else {
+      return <h1>Loading</h1>;
+    }
   }
 }
 
