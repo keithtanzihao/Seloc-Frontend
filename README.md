@@ -74,8 +74,21 @@ _Non-functional Requirements:_
 
 ![alt text](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDR8IFmjuX_9yYt2VLMlkU_kWC4uGxOnPvUhQfdccP8MkTovaVB1Hm4j_q1jc-7B0vnbU&usqp=CAU)
 
-* The Airbnb Listing Visualiser uses a tree hierachy as its structure.
+### Skeleton
 
+Access to the wireframes [here](https://dreamy-clarke-097e90.netlify.app/)
+
+### Surface
+
+_Colors:_
+
+![alt text](https://github.com/keithtanzihao/trentP1-frontend/blob/main/src/static/css/vendors/imgs/readme/colorsAirbnb.svg?raw=true)
+
+* A cool calm set of colors which is easy on the eyes was choosen as our app primarily focuses on users who are dealing with mental health symptons and bold colors might come off too strong.
+
+_Fonts:_
+
+* The Apercu font was used as the initial idea was to create an app very similar to the already existing meditation app "Headspace". And this font is very similar to that of the one used by Headspace.
 
 
 
