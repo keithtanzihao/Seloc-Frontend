@@ -27,6 +27,7 @@ class Login extends React.Component {
       email: "",
       password: "",
     },
+    loginMsg: ""
   };
 
   validateEmail = (value) => {
@@ -67,11 +68,23 @@ class Login extends React.Component {
 
     if (this.isValidForm) {
       const { credentials } = this.state;
-      await axios.post(BASE_API_URL + "login", {
-        ...credentials,
-      });
-      // Redirects to path
-      this.props.history.replace("/techniques");
+      let response = await axios.get(
+        BASE_API_URL +
+          `login/${this.state.credentials.email}/${this.state.credentials.password}`
+      );
+
+      console.log(response.data);
+
+      if (response.data.isValidPassword) {
+        this.setState({
+          loginMsg: ""
+        })
+        this.props.history.replace("/techniques");
+      } else {
+        this.setState({
+          loginMsg: "Invalid email / password"
+        })
+      }
     }
   };
 
@@ -87,6 +100,7 @@ class Login extends React.Component {
         <div className={`${styles["login__ctn--right"]}`}>
           
           <h1>Login</h1>
+          <span>{this.state.loginMsg}</span>
           <div className={`${styles["login__ctn--content"]}`}>
             <form className={`${styles["login__form"]}`}>
               <div className={`${styles["login__form"]}`}>
