@@ -10,8 +10,8 @@ import styles from "../../../styles/main.module.css";
 import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 
-const BASE_API_URL = "https://letstalkbackend.herokuapp.com/";
-// const BASE_API_URL = "http://localhost:3001/";
+// const BASE_API_URL = "https://letstalkbackend.herokuapp.com/";
+const BASE_API_URL = "http://localhost:3001/";
 
 class TechniqueDisplay extends React.Component {
   state = {
@@ -46,6 +46,7 @@ class TechniqueDisplay extends React.Component {
     let techniqueComments = await axios.get(
       BASE_API_URL + `technique/${this.props.match.params.id}/comments`
     );
+    console.log(techniqueComments.data);
     this.setState({
       hasLoaded: true,
       commentList: techniqueComments.data,
@@ -190,7 +191,6 @@ class TechniqueDisplay extends React.Component {
 
   renderComments = () => {
     return this.state.commentList.map((comment, index) => {
-
       return (
         <React.Fragment key={`comment${comment.comment}${index}`}>
           <Comment

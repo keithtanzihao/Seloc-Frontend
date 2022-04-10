@@ -58,3 +58,106 @@
 }
 
 
+
+
+
+
+
+@media screen and (max-width: 768px) {
+  .techniqueModal > span {
+    font-size: 1.5rem;
+  }
+
+  .techniqueModal__header > h1,
+  .techniqueModal__tagsCtn > h1 {
+    font-size: 2rem;
+  }
+
+  .techniqueModal__header > div button {
+    @include button__base;
+    display: flex;
+    align-items: center;
+
+    margin-left: 1rem;
+    font-size: 1rem;
+  }
+
+  .techniqueModal__dropdownsCtn > label,
+  .techniqueModal__dropdownsCtn > select,
+  .techniqueModal__matchAll,
+  .techniqueModal__tagsSection > span {
+    font-size: 1.25rem;
+  }
+
+  .techniqueModal__matchAll > div:nth-child(2) > input {
+    width: 2rem;
+    height: 2rem;
+  }
+
+}
+
+@media screen and (max-width: 425px) {
+  .techniqueModal {
+    @include frontpg__ctn;
+    position: absolute;
+    top: 0rem;
+    justify-content: center;
+    align-items: center;
+
+    width: calc(100vw - 2rem);
+    height: auto;
+    background-color: grey;
+  }
+
+  .techniqueModal > span {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+
+    border-radius: 100%;
+    padding: 0.5rem 0.6rem;
+    background-color: #ffffff;
+    font-family: apercuBold;
+    font-size: 2.5rem;
+  }
+
+  .techniqueModal > span {
+    font-size: 0.8rem;
+  }
+
+  .techniqueModal__header > div {
+    height: 2rem;
+    font-size: 0.8rem;
+  }
+
+  .techniqueModal__header > h1,
+  .techniqueModal__tagsCtn > h1 {
+    font-size: 1.5rem;
+  }
+
+  .techniqueModal__header > div button {
+    padding: 0rem 1rem;
+    font-size: 0.5rem;
+  }
+
+  .techniqueModal__dropdowns {
+    padding: 0.5rem 0.5rem;
+  }
+
+  .techniqueModal__dropdownsCtn {
+    margin: 0rem 1rem 0rem 0rem;
+  }
+
+  .techniqueModal__dropdownsCtn > label,
+  .techniqueModal__dropdownsCtn > select,
+  .techniqueModal__matchAll,
+  .techniqueModal__tagsSection > span {
+    font-size: 0.8rem;
+  }
+
+  .techniqueModal__matchAll > div:nth-child(2) > input {
+    width: 2rem;
+    height: 2rem;
+  }
+
+}

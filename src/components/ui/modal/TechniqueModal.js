@@ -7,8 +7,8 @@ import TagButton from "../button/TagButton";
 import styles from "../../../styles/main.module.css";
 
 
-const BASE_API_URL = "https://letstalkbackend.herokuapp.com/";
-// const BASE_API_URL = "http://localhost:3001/";
+// const BASE_API_URL = "https://letstalkbackend.herokuapp.com/";
+const BASE_API_URL = "http://localhost:3001/";
 
 export default class TechniqueModal extends React.Component {
   
@@ -19,8 +19,6 @@ export default class TechniqueModal extends React.Component {
 
     difficulty: "None",
     orderBy: "None",
-
-    isBroadMatch: false,
     selectedCategory: [],
     selectedPainPoints: [],
   };
@@ -101,6 +99,7 @@ export default class TechniqueModal extends React.Component {
       difficulty, orderBy, isBroadMatch,
       selectedCategory, selectedPainPoints,
     })
+    this.props.onClick();
   }
 
   render() {

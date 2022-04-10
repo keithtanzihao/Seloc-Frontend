@@ -15,9 +15,9 @@ const REGEX = {
   ),
 };
 
-const BASE_API_URL = "https://letstalkbackend.herokuapp.com/";
-// const BASE_API_URL = "http://localhost:3001/";
-
+// const BASE_API_URL = "https://letstalkbackend.herokuapp.com/";
+const BASE_API_URL = "http://localhost:3001/";
+// 
 let searchTimer;
 
 class Register extends React.Component {

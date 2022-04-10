@@ -13,8 +13,8 @@ import styles from "../../styles/main.module.scss";
 
 let searchTimer;
 
-const BASE_API_URL = "https://letstalkbackend.herokuapp.com/";
-// BASE_API_URL = "http://localhost:3001/";
+// const BASE_API_URL = "https://letstalkbackend.herokuapp.com/";
+const BASE_API_URL = "http://localhost:3001/";
 
 export default class Techniques extends React.Component {
   
@@ -43,7 +43,7 @@ export default class Techniques extends React.Component {
   };
 
   componentDidMount = async () => {
-    let response = await axios.get(BASES_API_URL + "techniques");
+    let response = await axios.get(BASE_API_URL + "techniques");
 
     this.setState({
       // Rename response, its like crap

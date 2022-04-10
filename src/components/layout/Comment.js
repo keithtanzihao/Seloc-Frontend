@@ -8,7 +8,7 @@ import Rating from "../ui/button/Rating";
 import styles from "../../styles/main.module.scss";
 import { FaStar } from "react-icons/fa";
 
-
+// const BASE_API_URL = "https://letstalkbackend.herokuapp.com/";
 const BASE_API_URL = "http://localhost:3001/";
 
 class Comment extends React.Component {

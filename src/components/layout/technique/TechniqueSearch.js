@@ -5,8 +5,8 @@ import { withRouter } from "react-router-dom";
 import styles from "../../../styles/main.module.scss";
 import { BsSearch } from "react-icons/bs";
 
-const BASE_API_URL = "https://letstalkbackend.herokuapp.com/";
-// const BASE_API_URL = "http://localhost:3001/";
+// const BASE_API_URL = "https://letstalkbackend.herokuapp.com/";
+const BASE_API_URL = "http://localhost:3001/";
 
 export default class TechniqueSearch extends React.Component {
   state = {
@@ -19,11 +19,6 @@ export default class TechniqueSearch extends React.Component {
     let filterPayload = JSON.stringify({
       ...this.props.filterOptions,
     });
-
-    console.log(`|_${queryPayload}_|`);
-    console.log("-----------------------------------------------");
-    console.log(filterPayload)
-    console.log("-----------------------------------------------");
 
     let response = await axios.get(
       BASE_API_URL + `techniques/search/${queryPayload}/${filterPayload}`
