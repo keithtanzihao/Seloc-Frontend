@@ -1,14 +1,14 @@
 import React from "react";
 import axios from "axios";
-
 import { withRouter, NavLink } from "react-router-dom";
 
 import Comment from "../../layout/Comment";
-
 import Button from "../button/Button";
 import Rating from "../button/Rating";
 
 import styles from "../../../styles/main.module.css";
+import { FaEdit } from "react-icons/fa";
+import { MdDelete } from "react-icons/md";
 
 const BASE_API_URL = "http://localhost:3001/";
 
@@ -105,6 +105,11 @@ class TechniqueDisplay extends React.Component {
     }
   };
 
+  deleteTechnique = async () => {
+    await axios.delete(BASE_API_URL + `technique/${this.props.match.params.id}`);
+    this.props.history.replace("/techniques");
+  }
+
   // Rewrite this later
   renderContent = (contentArray, className, isButton) => {
     return contentArray.map(function (content) {
@@ -115,6 +120,25 @@ class TechniqueDisplay extends React.Component {
       );
     });
   };
+
+  renderEditDelete = () => {
+    if (this.state.sessionUser !== "") {
+      return (
+        <React.Fragment>
+          <div >
+            <NavLink to={{
+              pathname: "/techniques/edit-technique",
+              techniqueInfo: this.state.techniqueInfo
+            }}>
+              <FaEdit className={`${styles["technique__contentIcon"]}`} />
+            </NavLink>
+
+            <MdDelete className={`${styles["technique__contentIcon"]}`} onClick={this.deleteTechnique}/>
+          </div>
+        </React.Fragment >
+      )
+    }
+  }
 
   renderInstructBen = (contentObj, className) => {
     let contentObjArray = [];
@@ -164,11 +188,8 @@ class TechniqueDisplay extends React.Component {
   };
 
   renderComments = () => {
-
-    console.log(this.state.commentList, this.state.techniqueInfo);
-
     return this.state.commentList.map((comment, index) => {
-      
+
       return (
         <React.Fragment key={`comment${comment.comment}${index}`}>
           <Comment
@@ -214,7 +235,12 @@ class TechniqueDisplay extends React.Component {
               />
 
               <div className={`${styles["technique__contentCtn"]}`}>
-                <h1>{title}</h1>
+                <div className={`${styles["technique__contentHead"]}`}>
+                  <h1>{title}</h1>
+                  {this.renderEditDelete()}
+                </div>
+
+
                 <span>Duration: Approximately {duration} hours</span>
                 <br />
                 <span>Difficulty: {difficulty}</span>
