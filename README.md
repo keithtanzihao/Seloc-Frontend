@@ -90,6 +90,65 @@ _Fonts:_
 
 * The Apercu font was used as the initial idea was to create an app very similar to the already existing meditation app "Headspace". And this font is very similar to that of the one used by Headspace.
 
+# Features
+
+1. **Users can register an account / login into their account.** This prevents other users from editting / delete comments created by the current user. At the same time, only registered users who are logged in are able to edit / delete existing technique programs.
+
+2. **Users can create and view technique programs.** The app is intended to be a mini-wiki for users to view helpful wellbeing programs. This app will also allow users to create detailed programs with instructions and benefits while classifying them under the supposed categories and painpoints the program is intended to fix. Images can also be added to the instructions / benefits for better clarity.
+
+3. **Users can edit and delete existing technique programs.** If mistakes were made during the process of creating the program, users will be able to edit or delete the program along with all the attached comments.
+
+4. **Users can write and rate existing technique programs.** Users will need to login to write comments. They can also add ratings to their comments which would allow other users to judge whether the program is good and suitable for their needs.
+
+5. **Error messages will appear if invalid inputs are entered during creation, editing of both programs and comments.** If a user inputs an invalid field, the app will provide a corresponding prompt to notify users of the problem.
+
+### Limitations and Future Implementations
+
+1. A smoother search function needs to be implemented. Currently users will always need to click the reset button to make sure the filter options are cleared, plus due to time constrains two way binding has not been done for the search filters, thus making the search function difficult to use.
+
+2. Pagination will be required as the database grows. Currently all the techniques are rendered within a single page which could potential crash the backend if the database is too huge. This is the same for the comments for each techniques.
+
+3. The login functionality has not been fully developed as a profile page is missing. The logout function as well as the current user logged in was also not completed due to the lack of time. This has to be fixed if not users will not be able to determine which current account is logged in, resulting in a bad UI.
+
+# Testing
+
+1. Access the testcases [here](https://github.com/keithtanzihao/trentP1-frontend/blob/main/src/static/files/testcases.pdf).
+2. Mobile responsive testing was done using chrome developer tool across dimensions(width): 320px, 375px, 425px, 768px, 1024px, 1440px, 2560px.
+
+# Technologies Used
+
+* HTML
+    * Styling and layout of the project
+
+* CSS 
+    * Style all elements throughout the web since no bootstrap is used
+
+* ReactJs
+    * For building a reactive UI
+
+* React Icons
+    * Some icons used were from this library
+
+* Axios
+    * For handling HTTP requests 
+
+* [Inkscape](https://inkscape.org/)
+    * For customising a variety of background images, icons, clusters, etc.
+
+* [Github](https://github.com/)
+    * Version control for project.
+
+* Netlify
+    * Deployment of website
+
+* Google Font
+    * Downloaded "Apercu" font used in project
+
+# Credits
+
+* Deployment steps
+    * Extracted and edited based on TGC's deployment guide
+
 
 
 
