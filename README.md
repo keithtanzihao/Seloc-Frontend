@@ -106,10 +106,27 @@ _Fonts:_
 
 3. The login functionality has not been fully developed as a profile page is missing. The logout function as well as the current user logged in was also not completed due to the lack of time. This has to be fixed if not users will not be able to determine which current account is logged in, resulting in a bad UI.
 
+
+
 # Testing
 
-1. Access the testcases [here](https://github.com/keithtanzihao/trentP1-frontend/blob/main/src/static/files/testcases.pdf).
-2. Mobile responsive testing was done using chrome developer tool across dimensions(width): 320px, 375px, 425px, 768px, 1024px, 1440px, 2560px.
+| Description                | Steps    |                 | Expected Results   | 
+| -------------------------- |:--------------------------:|:--------------------------:|  
+| Register user| User clicks on login tab which is located on the navbar, clicks on sign up, enters account information before pressing signup button| User should be directed to wellbeing technique page|
+| Login user | User clicks on login tab which is located on the navbar, enters account credentials before pressing login button| User should be directed to wellbeing technique page|
+| Views all wellbeing techniques| User clicks on library tab which is located on navbar| User can see all the wellbeing programs in the database
+| Create a new technique (Add basic info)| User clicks on the "Add technique" button, proceeds to fill in all the fields with the appropriate values, clicks next| User is brought to a new page which allows users fill in the technique title, description, duration, difficulty and image. All fields will have a "valid" message under them before proceeding to the next page when "next" button is clicked
+| Create a new technique (Add instructions/benefits)| Users can either click instructions/benefits button to alternate between which field to add. User fills in fields of both instructions/benefits at least once before clicking next | As user enters instructions/benefits, the users should be able to review what they have keyyed in. Next page is rendered when "next" button is clicked
+| Create a new technique (Add tags)| User can proceed to click on the respective category/ painpoints the technique is supposed to fulfill, "next" button is clicked| A new technique is now created and rendered on the "library" page
+
+
+
+
+
+
+
+
+* Mobile responsive testing was done using chrome developer tool across dimensions(width): 320px, 375px, 425px, 768px, 1024px, 1440px, 2560px.
 
 # Technologies Used
 
