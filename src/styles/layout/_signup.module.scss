@@ -1,13 +1,13 @@
-@import "../abstracts/variables.module";
+
 
 // Web responsive (Laptop - Laptop L)
-@media screen and (max-width: 2560px) {
-  .login {
+@media screen and (max-width: 1440px) {
+  .signup {
     display: flex;
   }
 
-  .login__ctn--left,
-  .login__ctn--right {
+  .signup__ctn--left,
+  .signup__ctn--right {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,27 +15,27 @@
     height: 100vh;
   }
 
-  .login__ctn--left {
+  .signup__ctn--left {
     background-color: #445870;
   }
 
-  .login__ctn--left > img {
+  .signup__ctn--left > img {
     width: 40vw;
   }
 
-  .login__ctn--right {
+  .signup__ctn--right {
     display: flex;
     flex-direction: column;
   }
 
-  .login__ctn--right > h1 {
+  .signup__ctn--right > h1 {
     margin-bottom: 1rem;
     text-decoration: underline;
     font-family: apercuBold;
     font-size: 3rem;
   }
 
-  .login__ctn--content {
+  .signup__ctn--content {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -44,27 +44,27 @@
     box-sizing: border-box;
     padding: 1rem;
     width: 35vw;
-    height: 35vh;
+    height: 50vh;
   }
 
-  .login__form {
+  .signup__form {
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
 
-  .login__form > label {
+  .signup__form > label {
     margin: 0.25rem 0rem;
     font-family: apercuRegular;
     font-size: 1.5rem;
   }
 
-  .login__form > div {
+  .signup__form > div {
     margin-bottom: 0.5rem;
     width: 100%;
   }
 
-  .login__form input {
+  .signup__form input {
     border-bottom: 2px solid #445870;
     box-sizing: border-box;
     margin-bottom: 0.25rem;
@@ -75,23 +75,23 @@
     font-size: 1.2rem;
   }
 
-  .login__form span {
+  .signup__form span {
     padding: 0rem 0.7rem;
     font-family: apercuRegular;
     font-size: 1rem;
   }
 
-  .login__btn {
+  .signup__btn {
     @include button__base;
     background-color: #445870;
     color: #ffffff;
   }
 
-  .login__btn span {
+  .signup__btn span {
     font-size: 1.2rem;
   }
 
-  .login__ctn--switch {
+  .signup__ctn--switch {
     display: flex;
     justify-content: center;
     margin: 1rem 0rem 0rem;
@@ -99,28 +99,28 @@
     font-size: 1.2rem;
   }
 
-  .login__ctn--switch a {
+  .signup__ctn--switch a {
     font-family: apercuBold;
     color: #000000;
   }
 }
 
-// Web responsive (Tablet - Laptop)
+
 @media screen and (max-width: 1024px) {
-  .login__ctn--right > h1 {
+  .signup__ctn--right > h1 {
     margin-bottom: 1rem;
     text-decoration: underline;
     font-family: apercuBold;
     font-size: 2.5rem;
   }
 
-  .login__form > label {
+  .signup__form > label {
     margin: 0.25rem 0rem;
     font-family: apercuRegular;
     font-size: 1rem;
   }
 
-  .login__form input {
+  .signup__form input {
     border-bottom: 2px solid #445870;
     box-sizing: border-box;
     margin-bottom: 0.25rem;
@@ -131,13 +131,13 @@
     font-size: 1rem;
   }
 
-  .login__form span {
+  .signup__form span {
     padding: 0rem 0.7rem;
     font-family: apercuRegular;
     font-size: 0.8rem;
   }
 
-  .login__ctn--switch {
+  .signup__ctn--switch {
     display: flex;
     justify-content: center;
     margin: 1rem 0rem 0rem;
@@ -148,24 +148,24 @@
 
 // Web responsive (Mobile L - Tablet)
 @media screen and (max-width: 768px) {
-  .login__ctn--left > img {
+  .signup__ctn--left > img {
     width: 50vw;
   }
 
-  .login__ctn--right > h1 {
+  .signup__ctn--right > h1 {
     margin-bottom: 1rem;
     text-decoration: underline;
     font-family: apercuBold;
     font-size: 2rem;
   }
 
-  .login__form > label {
+  .signup__form > label {
     margin: 0.25rem 0rem;
     font-family: apercuRegular;
     font-size: 1rem;
   }
 
-  .login__form input {
+  .signup__form input {
     border-bottom: 2px solid #445870;
     box-sizing: border-box;
     margin-bottom: 0.1rem;
@@ -176,17 +176,17 @@
     font-size: 0.8rem;
   }
 
-  .login__form span {
+  .signup__form span {
     padding: 0rem 0.7rem;
     font-family: apercuRegular;
     font-size: 0.65rem;
   }
 
-  .login__btn span {
+  .signup__btn span {
     font-size: 1rem;
   }
 
-  .login__ctn--switch {
+  .signup__ctn--switch {
     display: flex;
     justify-content: center;
     margin: 1rem 0rem 0rem;
@@ -197,12 +197,12 @@
 
 // Web responsive (Mobile S - Mobile L)
 @media screen and (max-width: 425px) {
-  .login {
+  .signup {
     display: flex;
     flex-direction: column;
   }
 
-  .login__ctn--left {
+  .signup__ctn--left {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -210,7 +210,7 @@
     height: 20vh;
   }
 
-  .login__ctn--right {
+  .signup__ctn--right {
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -219,11 +219,11 @@
     height: auto;
   }
 
-  .login__ctn--left > img {
+  .signup__ctn--left > img {
     width: 60vw;
   }
 
-  .login__ctn--content {
+  .signup__ctn--content {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -232,23 +232,23 @@
     box-sizing: border-box;
     padding: 1rem;
     width: 70vw;
-    height: 35vh;
+    height: 50vh;
   }
 
-  .login__ctn--right > h1 {
+  .signup__ctn--right > h1 {
     margin-bottom: 1rem;
     text-decoration: underline;
     font-family: apercuBold;
     font-size: 3rem;
   }
 
-  .login__form > label {
+  .signup__form > label {
     margin: 0.25rem 0rem;
     font-family: apercuRegular;
     font-size: 1rem;
   }
 
-  .login__form input {
+  .signup__form input {
     border-bottom: 2px solid #445870;
     box-sizing: border-box;
     margin-bottom: 0.1rem;
@@ -259,17 +259,17 @@
     font-size: 0.8rem;
   }
 
-  .login__form span {
+  .signup__form span {
     padding: 0rem 0.7rem;
     font-family: apercuRegular;
     font-size: 0.65rem;
   }
 
-  .login__btn span {
+  .signup__btn span {
     font-size: 1rem;
   }
 
-  .login__ctn--switch {
+  .signup__ctn--switch {
     display: flex;
     justify-content: center;
     margin: 1rem 0rem 0rem;
@@ -277,9 +277,3 @@
     font-size: 0.8rem;
   }
 }
-
-
-
-
-
-
