@@ -110,15 +110,20 @@ _Fonts:_
 
 # Testing
 
-| Description                | Steps    |                 | Expected Results   | 
-| -------------------------- |:--------------------------:|:--------------------------:|  
+| Description                | Steps                    | Expected Results         | 
+| -------------------------- |--------------------------|--------------------------|  
 | Register user| User clicks on login tab which is located on the navbar, clicks on sign up, enters account information before pressing signup button| User should be directed to wellbeing technique page|
 | Login user | User clicks on login tab which is located on the navbar, enters account credentials before pressing login button| User should be directed to wellbeing technique page|
 | Views all wellbeing techniques| User clicks on library tab which is located on navbar| User can see all the wellbeing programs in the database
 | Create a new technique (Add basic info)| User clicks on the "Add technique" button, proceeds to fill in all the fields with the appropriate values, clicks next| User is brought to a new page which allows users fill in the technique title, description, duration, difficulty and image. All fields will have a "valid" message under them before proceeding to the next page when "next" button is clicked
 | Create a new technique (Add instructions/benefits)| Users can either click instructions/benefits button to alternate between which field to add. User fills in fields of both instructions/benefits at least once before clicking next | As user enters instructions/benefits, the users should be able to review what they have keyyed in. Next page is rendered when "next" button is clicked
 | Create a new technique (Add tags)| User can proceed to click on the respective category/ painpoints the technique is supposed to fulfill, "next" button is clicked| A new technique is now created and rendered on the "library" page
-
+| Edit a new technique| A logged in user clicks on the desired technique before clicking on the edit icon| User is brought to the add/edit technique page (repeats "Create a new technique" steps|
+| Delete a new technique| A logged in user clicks on the desired technique before clicking on the delete icon| User is brought to the "library" page
+| Select a wellbeing technique| User clicks on desired technique| All information regarding technique is displayed on a new page along with all the comments made on it
+| Create a new comment| A logged in user write a comment and selects a star rating for a technique| The comment is immediately rendered on the technique display page
+| Edit a new comment| A logged in user can click the edit button on a comment and make changes to it| The comment's changes is immediately rendered on the technique display page
+| Delete a new comment |  A logged in user clicks the delete button on a comment | The comment is immediately removed from the technique and is no longer rendered on the technique display
 
 
 
