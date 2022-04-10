@@ -98,7 +98,6 @@ class Register extends React.Component {
     console.log("------------------ responseMsg");
     console.log(responseMsg);
 
-
     this.setState({
       flashMsg: responseMsg,
     });
@@ -130,6 +129,7 @@ class Register extends React.Component {
 
         <div className={`${styles["signup__ctn--right"]}`}>
           <h1>Sign Up</h1>
+          <span>{this.state.flashMsg}</span>
           <div className={`${styles["signup__ctn--content"]}`}>
             <form className={`${styles["signup__form"]}`}>
 
