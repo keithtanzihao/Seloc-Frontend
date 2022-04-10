@@ -7,8 +7,11 @@ import TagButton from "../../ui/button/TagButton";
 import styles from "../../../styles/main.module.scss";
 import axios from "axios";
 
+const BASE_API_URL = "https://letstalkbackend.herokuapp.com/";
+// BASE_API_URL = "http://localhost:3001/";
+
 export default class TechniqueAddTags extends React.Component {
-  BASE_API_URL = "http://localhost:3001/";
+  
 
   state = {
     categoryFields: [],
