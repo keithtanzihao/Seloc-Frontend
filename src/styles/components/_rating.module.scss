@@ -1,0 +1,29 @@
+
+.rating__radio {
+  display: none;
+}
+
+.rating__stars {
+  transition: color 200ms;
+  font-size: 4rem;
+  cursor: pointer;
+}
+
+.rating__stars--display {
+  transition: color 200ms;
+  font-size: 3rem;
+  cursor: pointer;
+}
+
+
+@media screen and (max-width: 1024px) {
+  .rating__stars {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .rating__stars {
+    font-size: 2rem;
+  }
+}

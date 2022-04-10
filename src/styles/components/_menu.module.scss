@@ -1,9 +1,16 @@
 .menu {
+  display: block;
   padding: 2rem 1rem;
 }
 
-.menu > div:first-child {
-  margin-bottom: 3rem;
+// .menu > div:first-child {
+//   margin-bottom: 3rem;
+// }
+
+.menu a {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
 }
 
 .menu__header {
@@ -21,5 +28,10 @@
 
 .menu__item__title {
   font-family: apercuBold;
-  font-size: 2.2rem;
+  font-size: 2.5rem;
+}
+
+
+@media screen and (max-width: 425px) {
+
 }

@@ -1,0 +1,292 @@
+@media screen and (max-width: 2560px) {
+  .technique__display {
+    display: flex;
+    justify-content: center;
+  }
+
+  .technique__displayCtn {
+    padding: 3rem 0rem;
+    width: 69vw;
+    // background-color: grey;
+  }
+
+  .technique__display > a {
+    align-self: flex-start;
+  }
+
+  .technique__returnBtn {
+    @include button__base;
+    position: absolute;
+    align-self: flex-start;
+    border-radius: 100%;
+    margin: 1rem;
+    color: black;
+    background-color: #ffffff;
+  }
+
+  .technique__displayImg {
+    width: 100%;
+  }
+
+  .technique__contentCtn {
+    padding: 1rem;
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  .technique__contentHead {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .technique__contentHead a {
+    margin: 0rem 2rem 0rem 0rem;
+    text-decoration: none;
+    color: black;
+  }
+
+  .technique__contentIcon {
+    font-size: 3rem;
+    cursor: pointer;
+  }
+
+  .technique__contentCtn > div > h1,
+  .technique__contentCtn h3 {
+    margin-top: 3rem;
+  }
+
+  .technique__contentCtn h1 {
+    font-family: apercuBold;
+    font-size: 3rem;
+  }
+
+  .technique__contentCtn h3 {
+    font-family: apercuMedium;
+    font-size: 2.5rem;
+  }
+
+  .technique__contentCtn span {
+    font-family: apercuRegular;
+    font-size: 1.5rem;
+  }
+
+  .technique__contentCtn p,
+  .technique__contentCtn ol,
+  .technique__contentCtn ul,
+  .technique__contentCtn li,
+  .technique__commentCtn--input {
+    width: 100%;
+    font-family: apercuRegular;
+    font-size: 1.5rem;
+  }
+
+  // Instructions / Benefits info container
+  .technique__InfoCtn {
+    display: flex;
+    border: 4px solid black;
+    border-radius: 24px;
+    box-sizing: border-box;
+    margin: 0rem 0rem 1rem;
+    width: 100%;
+
+    background-color: beige;
+  }
+
+  .technique__InfoCtn > p {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    font-family: apercuRegular;
+    font-size: 1.5rem;
+  }
+
+  .technique__InfoCtn > img {
+    border-top-right-radius: 24px;
+    border-bottom-right-radius: 24px;
+    width: 30vw;
+    height: auto;
+  }
+
+  // Comments input section
+  .technique__commentCtn--input {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .technique__commentStars {
+    margin: 1rem 0rem 0rem;
+  }
+
+  .technique__commentCtn--input textarea {
+    border: 4px solid black;
+    margin: 1rem 0rem 0rem;
+    padding: 0.5rem;
+    height: 10vh;
+    font-family: apercuRegular;
+    font-size: 1.5rem;
+  }
+
+  // Comments display section
+  .technique__commentCtn--display {
+    background-color: grey;
+  }
+
+  .technique__comment {
+    display: flex;
+    flex-direction: column;
+
+    border: 4px solid black;
+    box-sizing: border-box;
+    margin: 1rem 0rem 0rem;
+  }
+
+  .technique__commentUser {
+    display: flex;
+    align-items: center;
+  }
+
+  .technique__commentUser > img {
+    border-radius: 100%;
+    padding: 1rem;
+    width: 8vw;
+    height: auto;
+  }
+
+  .technique__commentContent {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .technique__commentContent > div {
+    margin-bottom: 1rem;
+  }
+
+  // Buttons
+  .technique__contentBtn--category,
+  .technique__contentBtn--painpoint,
+  .technique__contentBtn--comment {
+    @include button__base;
+    margin: 0.5rem 0.5rem 0rem 0rem;
+  }
+
+  .technique__contentBtn--category,
+  .technique__contentBtn--comment {
+    background-color: #0850fe;
+  }
+
+  .technique__contentBtn--painpoint {
+    background-color: #ef853b;
+  }
+
+  .technique__contentBtn--comment {
+    width: 8vw;
+  }
+}
+
+
+@media screen and (max-width: 1024px) {
+  .technique__contentCtn > div > h1,
+  .technique__contentCtn h3 {
+    margin-top: 1.5rem;
+  }
+
+  .technique__contentCtn h1 {
+    font-family: apercuBold;
+    font-size: 2rem;
+  }
+
+  .technique__contentHead svg {
+    font-size: 2rem;
+  }  
+
+  .technique__contentCtn span {
+    font-family: apercuRegular;
+    font-size: 1rem;
+  }
+
+  .technique__contentCtn h3 {
+    font-family: apercuMedium;
+    font-size: 1.8rem;
+  }
+
+  .technique__contentCtn p,
+  .technique__contentCtn ol,
+  .technique__contentCtn ul,
+  .technique__contentCtn li,
+  .technique__commentCtn--input {
+    font-size: 1rem;
+  }
+
+  .technique__InfoCtn > p {
+    font-size: 1rem;
+  }
+
+  .technique__commentCtn--input textarea {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .technique__contentBtn--comment {
+    width: 12vw;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .technique__displayCtn {
+    padding: 0rem;
+    width: 100vw;
+  }
+
+  .technique__contentHead > div {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .technique__contentHead a {
+    margin: 0rem 0.5rem 0rem 0rem;
+    text-decoration: none;
+    color: black;
+  }
+
+  .technique__contentHead svg {
+    font-size: 1.5rem;
+  } 
+
+  .technique__contentCtn h1 {
+    font-family: apercuBold;
+    font-size: 1.6rem;
+  }
+
+  .technique__contentCtn span {
+    font-family: apercuRegular;
+    font-size: 0.8rem;
+  }
+
+  .technique__contentCtn h3 {
+    font-family: apercuMedium;
+    font-size: 1.6rem;
+  }
+
+  .technique__contentCtn p,
+  .technique__contentCtn ol,
+  .technique__contentCtn ul,
+  .technique__contentCtn li,
+  .technique__commentCtn--input {
+    font-size: 0.8rem;
+  }
+
+  .technique__InfoCtn > p {
+    font-size: 0.8rem;
+  }
+
+  .technique__commentCtn--input textarea {
+    font-size: 1rem;
+  }
+
+  .technique__contentBtn--comment {
+    width: 24vw;
+  }
+}

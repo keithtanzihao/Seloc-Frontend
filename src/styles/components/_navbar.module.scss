@@ -1,62 +1,99 @@
 @import "../abstracts/variables.module";
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-  width: calc(100vw - 2rem);
-  height: 5vh;
-  box-shadow: 0 2px 4px 0 rgb(0 0 0 / 40%);
-}
+@media screen and (max-width: 2560px) {
+  .navmenu__btn {
+    display: none;
+  }
 
-.navbar__sectionCtn {
-  display: flex;
-}
-
-// NavbarMenu css
-.navmenu__btn {
-  border: 0px;
-  background: none;
-  cursor: pointer;
-}
-
-.navmenu__btn__svg {
-  padding-top: 0.4rem;
-  height: 20px;
-  width: auto;
-}
-
-// NavbarBrand css
-.navbar__navbrandCtn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: calc(100vw - 6rem);
-  height: 10vh;
-}
-
-.navbrand {
-  display: flex;
-  align-items: center;
+  .navbar {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    width: calc(100vw - 2rem);
+    height: 5vh;
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 40%);
+  }
   
+  .navbar__ctn {
+    display: flex;
+    justify-content: space-between;
+    width: 60vw;
+  }
+  
+  .navbar__ctn > div {
+    display: flex;
+  }
+  
+  .navbar__title {
+    display: flex;
+    align-items: center;
+    font-family: apercuBold;
+    font-size: 1.5rem;
+  }
+  
+  .navbar__list {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar__list a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  .navbar__icons {
+    margin: 0.25rem;
+    font-size: 1.5rem;
+  }
+  
+  .navbar__item {
+    display: flex;
+    align-items: center;
+    margin: 0rem 0.5rem;
+  
+    font-family: apercuRegular;
+    font-size: 1rem;
+  }
 }
 
-.navbrand__svg {
-  width: 30px;
-  height: 30px;
-}
 
-.navbrand__title {
-  margin-left: 0.3rem;
-  font-family: apercuRegular;
-  font-size: 1.4rem;
-  letter-spacing: -2px;
-}
+// Web responsive (Mobile S - Mobile L)
+@media screen and (max-width: 425px) {
+  .navmenu__btn {
+    position: relative;
+    display: block;
+    border: 0px;
+    background: none;
+    cursor: pointer;
+  }
 
-// NavbarLogin css
-.navbtn {
-  @include button__base;
-  background-color: #0850fe;
-  color: #ffffff;
+  .navmenu__btn__svg {
+    padding-top: 0.4rem;
+    height: 20px;
+    width: auto;
+  }
+
+  .navbar__ctn {
+    display: flex;
+    justify-content: space-between;
+    width: 80vw;
+  }
+
+  .navbar__ctn > div {
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar__ctn > div > h1 {
+    position: absolute;
+    text-align: center;
+    right: 50%;
+    transform: translateX(50%);
+  }
+
+  .navbar__list {
+    display: none;
+  }
 }

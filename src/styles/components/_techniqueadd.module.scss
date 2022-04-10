@@ -1,0 +1,348 @@
+@media screen and (max-width: 2560px) {
+  .techniqueAdd {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-bottom: 3rem;
+  }
+
+  .techniqueAdd__header {
+    display: flex;
+    justify-content: center;
+
+    width: 90vw;
+  }
+
+  .techniqueAdd__header > h1 {
+    margin: 3rem 0rem 1rem 0rem;
+    text-decoration: underline;
+    font-family: apercuBold;
+    font-size: 2rem;
+  }
+
+  /* 
+  Ok need to refactor this / think of a better way to do this
+  too difficult to manage this shit
+  */
+
+  // techniqueAddInfo
+  .techniqueAdd__ctn--info,
+  .techniqueAdd__ctn--instructBen {
+    width: 90vw;
+  }
+
+  .techniqueAdd__info--inputs {
+    display: flex;
+    flex-direction: column;
+  }
+
+  // SImilar stuff techniqueAdd__info--inputs
+  .techniqueAdd__infoTitle,
+  .techniqueAdd__infoDesc,
+  .techniqueAdd__infoImage,
+  .techniqueAdd__selectCtn,
+  .techniqueAdd__instructCtn,
+  .techniqueAdd__tagCtn {
+    display: flex;
+    flex-direction: column;
+    padding: 0rem 2rem;
+  }
+
+  .techniqueAdd__tagCtn {
+    margin: 0rem 0rem 2rem 0rem;
+  }
+
+  // Labels / headres
+  .techniqueAdd__infoTitle > label,
+  .techniqueAdd__infoDesc > label,
+  .techniqueAdd__dropDown--ctn > label,
+  .techniqueAdd__infoImage > label,
+  .techniqueAdd__selectCtn > h1,
+  .techniqueAdd__instructCtn > h1,
+  .techniqueAdd__displayCtn > h3,
+  .techniqueAdd__tagCtn > label {
+    padding: 0rem 0rem 0.5rem 0.5rem;
+    font-family: apercuBold;
+    font-size: 2.5rem;
+  }
+
+  // Input stuff
+  .techniqueAdd__infoTitle > input,
+  .techniqueAdd__infoDesc > textarea,
+  .techniqueAdd__dropDown--ctn > input,
+  .techniqueAdd__dropDown--ctn > select,
+  .techniqueAdd__infoImage > input,
+  .techniqueAdd__instructCtn > input {
+    border: 4px solid black;
+    border-radius: 24px;
+    box-sizing: border-box;
+
+    padding: 1rem;
+
+    font-family: apercuRegular;
+    font-size: 1.5rem;
+  }
+
+  // Error msgs
+  .techniqueAdd__infoTitle > span,
+  .techniqueAdd__infoDesc > span,
+  .techniqueAdd__infoImage > span,
+  .techniqueAdd__instructCtn > span {
+    margin: 0.5rem 0rem 1rem 0rem;
+    padding: 0rem 1rem;
+
+    font-family: apercuRegular;
+    font-size: 1.5rem;
+  }
+
+  .techniqueAdd__infoDropDown {
+    display: flex;
+    padding: 0rem 2rem;
+  }
+
+  .techniqueAdd__dropDown--ctn {
+    display: flex;
+    flex-direction: column;
+    margin: 0rem 3rem 1rem 0rem;
+  }
+
+  //Buttons
+  .techniqueAdd__info--btns {
+    padding: 0rem 2rem;
+  }
+
+  .techniqueAdd__infoBtn,
+  .techniqueAdd__infoBtn--cancel,
+  .techniqueAdd__addBtn {
+    @include button__base;
+    margin-right: 1rem;
+    font-size: 1.5rem;
+  }
+
+  .techniqueAdd__infoBtn--cancel {
+    background-color: red;
+  }
+
+  // ----------------------------------------------------
+
+  .techniqueAdd__selectCtn {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .techniqueAdd__selectCtn > div {
+    margin: 0.5rem 0rem 1rem 0rem;
+  }
+
+  .techniqueAdd__selectCtn > div button {
+    @include button__base;
+    margin-right: 1rem;
+    font-size: 1.5rem;
+  }
+
+  .techniqueAdd__instructCtn > label {
+    padding: 0rem 0rem 0.25rem 0.5rem;
+    font-family: apercuBold;
+    font-size: 1.5rem;
+  }
+
+  .techniqueAdd__addBtn {
+    margin: 0rem 0rem 1rem 0rem;
+  }
+
+  .techniqueAdd__displayCtn > ol {
+    // padding: 0rem 2rem;
+  }
+
+  .techniqueAdd__displayCtn > ol > div {
+    display: flex;
+  }
+
+  .techniqueAdd__displayCtn > ol > div > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+  }
+
+  // No time liao
+  .techniqueAdd__displayCtn > ol > div > div > span {
+    padding: 0.5rem 0.75rem;
+    border: 4px solid black;
+    border-radius: 100%;
+    font-size: 2rem;
+  }
+
+  .techniqueAdd__indivItem {
+    display: flex;
+    justify-content: space-between;
+
+    border: 4px solid black;
+    border-radius: 24px;
+    box-sizing: border-box;
+    margin: 0rem 0rem 1rem;
+    width: 80%;
+    height: 20vh;
+
+    background-color: beige;
+  }
+
+  .techniqueAdd__indivItem > p {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    font-family: apercuRegular;
+    font-size: 1.5rem;
+    width: 100%;
+  }
+
+  .techniqueAdd__indivItem > img {
+    border-top-right-radius: 24px;
+    border-bottom-right-radius: 24px;
+    width: 30vw;
+    height: auto;
+
+    object-fit: cover;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  // Labels / headres
+  .techniqueAdd__infoTitle > label,
+  .techniqueAdd__infoDesc > label,
+  .techniqueAdd__dropDown--ctn > label,
+  .techniqueAdd__infoImage > label,
+  .techniqueAdd__selectCtn > h1,
+  .techniqueAdd__instructCtn > h1,
+  .techniqueAdd__displayCtn > h3,
+  .techniqueAdd__tagCtn > label {
+    font-family: apercuBold;
+    font-size: 1.8rem;
+  }
+
+  // Input stuff
+  .techniqueAdd__infoTitle > input,
+  .techniqueAdd__infoDesc > textarea,
+  .techniqueAdd__dropDown--ctn > input,
+  .techniqueAdd__dropDown--ctn > select,
+  .techniqueAdd__infoImage > input,
+  .techniqueAdd__instructCtn > input {
+    font-size: 1.25rem;
+  }
+
+  // Error msgs
+  .techniqueAdd__infoTitle > span,
+  .techniqueAdd__infoDesc > span,
+  .techniqueAdd__infoImage > span,
+  .techniqueAdd__instructCtn > span {
+    font-size: 1.25rem;
+  }
+
+  .techniqueAdd__infoBtn,
+  .techniqueAdd__infoBtn--cancel,
+  .techniqueAdd__addBtn {
+    font-size: 1.25rem;
+  }
+
+  .techniqueAdd__selectCtn > div button {
+    font-size: 1.25rem;
+  }
+
+  .techniqueAdd__indivItem > p {
+    font-size: 1.25rem;
+  }
+
+  .techniqueAdd__displayCtn > ol > div > div > span {
+    font-size: 1.5rem;
+  }
+
+
+}
+
+@media screen and (max-width: 425px) {
+
+
+  .techniqueAdd__header {
+    width: 100vw;
+  }
+
+  .techniqueAdd__ctn--info,
+  .techniqueAdd__ctn--instructBen {
+    width: 100vw;
+  }
+
+  .techniqueAdd__header > h1 {
+    text-align: center;
+  }
+
+  // SImilar stuff techniqueAdd__info--inputs
+  .techniqueAdd__infoTitle,
+  .techniqueAdd__infoDesc,
+  .techniqueAdd__infoImage,
+  .techniqueAdd__selectCtn,
+  .techniqueAdd__instructCtn,
+  .techniqueAdd__tagCtn,
+  .techniqueAdd__infoDropDown,
+  .techniqueAdd__info--btns {
+    padding: 0rem 0.5rem;
+  }
+
+  // Labels / headres
+  .techniqueAdd__infoTitle > label,
+  .techniqueAdd__infoDesc > label,
+  .techniqueAdd__dropDown--ctn > label,
+  .techniqueAdd__infoImage > label,
+  .techniqueAdd__selectCtn > h1,
+  .techniqueAdd__instructCtn > h1,
+  .techniqueAdd__displayCtn > h3,
+  .techniqueAdd__tagCtn > label {
+    font-family: apercuBold;
+    font-size: 1.5rem;
+  }
+
+  // Input stuff
+  .techniqueAdd__infoTitle > input,
+  .techniqueAdd__infoDesc > textarea,
+  .techniqueAdd__dropDown--ctn > input,
+  .techniqueAdd__dropDown--ctn > select,
+  .techniqueAdd__infoImage > input,
+  .techniqueAdd__instructCtn > input {
+    font-size: 1rem;
+  }
+
+  // Error msgs
+  .techniqueAdd__infoTitle > span,
+  .techniqueAdd__infoDesc > span,
+  .techniqueAdd__infoImage > span,
+  .techniqueAdd__instructCtn > span {
+    margin-right: 0.5rem;
+    font-size: 1rem;
+  }
+
+  .techniqueAdd__infoBtn,
+  .techniqueAdd__infoBtn--cancel,
+  .techniqueAdd__addBtn {
+    margin-right: 0.5rem;
+    font-size: 0.7rem;
+  }
+
+  .techniqueAdd__selectCtn > div button {
+    font-size: 1rem;
+  }
+
+  .techniqueAdd__indivItem > p {
+    font-size: 1rem;
+  }
+
+  .techniqueAdd__displayCtn > ol > div > div > span {
+    font-size: 1rem;
+  }
+
+  .techniqueAdd__infoDropDown {
+    display: flex;
+    flex-direction: column;
+  }
+  
+}
