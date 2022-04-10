@@ -87,17 +87,25 @@ export default class TechniqueAddTags extends React.Component {
             <span className={`${styles["techniqueAdd__error"]}`}></span>
           </div>
 
-          <div>
+          <div className={`${styles["techniqueAdd__info--btns"]}`}>
             <NavLink to="/techniques">
-              <Button content="Cancel" />
+              <Button 
+                class={`${styles["techniqueAdd__infoBtn--cancel"]}`} 
+                content="Cancel" 
+              />
             </NavLink>
 
             <Button
+              class={`${styles["techniqueAdd__infoBtn"]}`}
               content="Previous"
               clickEvent={() => updateIncreasePageNum(false)}
             />
 
-            <Button content="Submit" clickEvent={() => submitNewTechnique(this.checkTagsNotEmpty)} />
+            <Button 
+              class={`${styles["techniqueAdd__infoBtn"]}`} 
+              content="Submit" 
+              clickEvent={() => submitNewTechnique(this.checkTagsNotEmpty)} 
+            />
           </div>
 
         </div>
