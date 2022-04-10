@@ -7,8 +7,8 @@ import Button from "../ui/button/Button";
 import loginImg from "../../styles/vendors/imgs/login/loginImg.png";
 import styles from "../../styles/main.module.scss";
 
-// const BASE_API_URL = "https://letstalkbackend.herokuapp.com/";
-const BASE_API_URL = "http://localhost:3001/";
+const BASE_API_URL = "https://letstalkbackend.herokuapp.com/";
+// const BASE_API_URL = "http://localhost:3001/";
 
 // Need to change this later cos its from Razia
 const REGEX = {

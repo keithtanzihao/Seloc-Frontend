@@ -13,8 +13,8 @@ import styles from "../../styles/main.module.scss";
 
 let searchTimer;
 
-// const BASE_API_URL = "https://letstalkbackend.herokuapp.com/";
-const BASE_API_URL = "http://localhost:3001/";
+const BASE_API_URL = "https://letstalkbackend.herokuapp.com/";
+// const BASE_API_URL = "http://localhost:3001/";
 
 export default class Techniques extends React.Component {
   

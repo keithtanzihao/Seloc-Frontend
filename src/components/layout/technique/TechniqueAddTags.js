@@ -7,8 +7,8 @@ import TagButton from "../../ui/button/TagButton";
 import styles from "../../../styles/main.module.scss";
 import axios from "axios";
 
-// const BASE_API_URL = "https://letstalkbackend.herokuapp.com/";
-const BASE_API_URL = "http://localhost:3001/";
+const BASE_API_URL = "https://letstalkbackend.herokuapp.com/";
+// const BASE_API_URL = "http://localhost:3001/";
 
 export default class TechniqueAddTags extends React.Component {
   

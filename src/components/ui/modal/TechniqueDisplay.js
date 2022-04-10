@@ -10,8 +10,8 @@ import styles from "../../../styles/main.module.css";
 import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 
-// const BASE_API_URL = "https://letstalkbackend.herokuapp.com/";
-const BASE_API_URL = "http://localhost:3001/";
+const BASE_API_URL = "https://letstalkbackend.herokuapp.com/";
+// const BASE_API_URL = "http://localhost:3001/";
 
 class TechniqueDisplay extends React.Component {
   state = {
