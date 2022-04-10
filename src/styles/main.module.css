@@ -202,7 +202,7 @@ table {
     align-items: center;
     width: calc(100vw - 2rem);
     height: 100vh;
-    background-color: grey;
+    background-color: #E6F6FC;
   }
 
   .techniqueModal > span {
@@ -249,7 +249,7 @@ table {
     box-sizing: border-box;
     font-family: apercuRegular;
     font-size: 1rem;
-    background-color: #0850fe;
+    background-color: #445870;
     color: #ffffff;
     cursor: pointer;
     display: flex;
@@ -378,7 +378,7 @@ table {
     border-radius: 24px;
     margin: 0rem 0.25rem 0.25rem 0rem;
     padding: 0.25rem 0.5rem;
-    background-color: orange;
+    background-color: #FBAE24;
     font-family: apercuRegular;
     font-size: 1rem;
   }
@@ -405,7 +405,7 @@ table {
     border-radius: 24px;
     margin: 0rem 0.15rem 0.15rem 0rem;
     padding: 0.25rem 0.5rem;
-    background-color: orange;
+    background-color: #FBAE24;
     font-family: apercuRegular;
     font-size: 0.8rem;
   }
@@ -436,7 +436,7 @@ table {
     border-radius: 24px;
     margin: 0rem 0.15rem 0.15rem 0rem;
     padding: 0.25rem 0.5rem;
-    background-color: orange;
+    background-color: #FBAE24;
     font-family: apercuRegular;
     font-size: 0.8rem;
   }
@@ -467,7 +467,7 @@ table {
     border-radius: 24px;
     margin: 0rem 0.15rem 0.15rem 0rem;
     padding: 0.25rem 0.5rem;
-    background-color: orange;
+    background-color: #FBAE24;
     font-family: apercuRegular;
     font-size: 0.8rem;
   }
@@ -500,7 +500,7 @@ table {
     box-sizing: border-box;
     font-family: apercuRegular;
     font-size: 1rem;
-    background-color: #0850fe;
+    background-color: #445870;
     color: #ffffff;
     cursor: pointer;
     position: absolute;
@@ -575,7 +575,7 @@ table {
     box-sizing: border-box;
     margin: 0rem 0rem 1rem;
     width: 100%;
-    background-color: beige;
+    background-color: #E6F6FC;
   }
 
   .technique__InfoCtn > p {
@@ -612,7 +612,7 @@ table {
   }
 
   .technique__commentCtn--display {
-    background-color: grey;
+    background-color: #E6F6FC;
   }
 
   .technique__comment {
@@ -654,7 +654,7 @@ table {
     box-sizing: border-box;
     font-family: apercuRegular;
     font-size: 1rem;
-    background-color: #0850fe;
+    background-color: #445870;
     color: #ffffff;
     cursor: pointer;
     margin: 0.5rem 0.5rem 0rem 0rem;
@@ -662,7 +662,7 @@ table {
 
   .technique__contentBtn--category,
 .technique__contentBtn--comment {
-    background-color: #0850fe;
+    background-color: #445870;
   }
 
   .technique__contentBtn--painpoint {
@@ -886,7 +886,7 @@ table {
     box-sizing: border-box;
     font-family: apercuRegular;
     font-size: 1rem;
-    background-color: #0850fe;
+    background-color: #445870;
     color: #ffffff;
     cursor: pointer;
     margin-right: 1rem;
@@ -913,7 +913,7 @@ table {
     box-sizing: border-box;
     font-family: apercuRegular;
     font-size: 1rem;
-    background-color: #0850fe;
+    background-color: #445870;
     color: #ffffff;
     cursor: pointer;
     margin-right: 1rem;
@@ -958,7 +958,7 @@ table {
     margin: 0rem 0rem 1rem;
     width: 80%;
     height: 20vh;
-    background-color: beige;
+    background-color: #E6F6FC;
   }
 
   .techniqueAdd__indivItem > p {
@@ -1107,7 +1107,7 @@ table {
   .tagBtn {
     position: relative;
     display: inline-block;
-    border: 4px solid #0850fe;
+    border: 4px solid #445870;
     border-radius: 24px;
     box-sizing: border-box;
     padding: 0.5rem;
@@ -1144,7 +1144,7 @@ table {
   }
 
   .checked {
-    background-color: #0850fe;
+    background-color: #445870;
     color: #ffffff;
   }
 }
@@ -1171,7 +1171,7 @@ table {
     box-sizing: border-box;
     font-family: apercuRegular;
     font-size: 1rem;
-    background-color: #0850fe;
+    background-color: #445870;
     color: #ffffff;
     cursor: pointer;
     display: flex;
@@ -1205,7 +1205,7 @@ table {
     align-items: center;
     width: calc(100vw - 2rem);
     height: auto;
-    background-color: grey;
+    background-color: #E6F6FC;
   }
 
   .techniqueModal > span {
@@ -1315,14 +1315,14 @@ table {
   box-sizing: border-box;
   font-family: apercuRegular;
   font-size: 1rem;
-  background-color: #0850fe;
+  background-color: #445870;
   color: #ffffff;
   cursor: pointer;
   margin: 1rem 0rem;
   padding: 1rem;
   width: 80%;
   border-radius: 48px;
-  background-color: #0850fe;
+  background-color: #445870;
   color: #ffffff;
 }
 
@@ -1417,7 +1417,7 @@ table {
     box-sizing: border-box;
     font-family: apercuRegular;
     font-size: 1rem;
-    background-color: #0850fe;
+    background-color: #445870;
     color: #ffffff;
     cursor: pointer;
     background-color: #445870;
@@ -1695,7 +1695,7 @@ table {
     box-sizing: border-box;
     font-family: apercuRegular;
     font-size: 1rem;
-    background-color: #0850fe;
+    background-color: #445870;
     color: #ffffff;
     cursor: pointer;
     background-color: #445870;
@@ -1926,7 +1926,7 @@ table {
     box-sizing: border-box;
     font-family: apercuRegular;
     font-size: 1rem;
-    background-color: #0850fe;
+    background-color: #445870;
     color: #ffffff;
     cursor: pointer;
     margin-right: 1rem;
@@ -2016,7 +2016,7 @@ table {
     box-sizing: border-box;
     font-family: apercuRegular;
     font-size: 1rem;
-    background-color: #0850fe;
+    background-color: #445870;
     color: #ffffff;
     cursor: pointer;
     margin-right: 1rem;
