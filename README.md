@@ -49,6 +49,38 @@ _User:_
 | As a user who has used a technique program, I want a platform to provide feedback so that I can rate whether I have benefited from the program as well as what the program can improve on| Feedback and rating feature where users can leave and read comments
 
 
+### Scope
+
+_Functional Specifications:_
+  * Register and login new / existing users
+  * Create, display, edit and delete technique programs
+  * Filter out technique programs based on category, technique, difficulty
+  * Order technique programs based on duration
+  * Create, display, edit and delete comments
+
+_Content Requirements:_
+  * Posting of technique title, description, duration, difficulty, instructions, benefits, wellbeing categories, targeted painpoints and respective supporting images (optional)
+  * User's credentials 
+  * Comment ratings and content
+
+_Non-functional Requirements:_
+  * Mobile Responsiveness
+      * Using media queries and flex-box
+  * User validation
+      * Basic validation to determine user
+      * Session saves user's information depsite refreshing of page
+
+### Structure
+
+![alt text](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDR8IFmjuX_9yYt2VLMlkU_kWC4uGxOnPvUhQfdccP8MkTovaVB1Hm4j_q1jc-7B0vnbU&usqp=CAU)
+
+* The Airbnb Listing Visualiser uses a tree hierachy as its structure.
+
+
+
+
+
+
 
 
 
