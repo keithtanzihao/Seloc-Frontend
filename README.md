@@ -82,7 +82,7 @@ Access to the wireframes [here](https://dreamy-clarke-097e90.netlify.app/)
 
 _Colors:_
 
-![alt text](https://github.com/keithtanzihao/trentP1-frontend/blob/main/src/static/css/vendors/imgs/readme/colorsAirbnb.svg?raw=true)
+![alt text](https://github.com/keithtanzihao/letstalk-frontend/blob/main/src/styles/vendors/imgs/colors.png?raw=true)
 
 * A cool calm set of colors which is easy on the eyes was choosen as our app primarily focuses on users who are dealing with mental health symptons and bold colors might come off too strong.
 
